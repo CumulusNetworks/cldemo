@@ -8,22 +8,10 @@
 - name: configure MOTD
   template: src=motd.j2 dest=/etc/motd
 
-- name: check if license is installed
-  stat: path=/mnt/persist/etc/cumulus/.license.txt
-  register: licfile
-
-- name: remove temp license location if license is not properly installed
-  file: path=/etc/cumulus/license.txt state=absent
-  when: licfile.stat.exists == False
-
-- name: copy license to temp location
-  copy: src={{ ansible_hostname }}.lic dest=/etc/cumulus/license.txt
-  notify:
-    - install license
-    - restart switchd
-    - wait for switchd to start
-    - reload networking
-    - restart quagga
+- name: License switch
+  cl_license: >
+    src="http://{{ cl_license_server }}/{{ ansible_hostname }}.lic"
+    restart_switchd=yes
 
 - name: configure ptmd topology.dot
   copy: src=topology.dot dest=/etc/ptm.d/topology.dot

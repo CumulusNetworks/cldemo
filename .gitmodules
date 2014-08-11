@@ -19,3 +19,6 @@
 [submodule "pkgs/workbench/cldemo-wbench-base-puppet/debian/etc/puppet/modules/stdlib"]
 	path = pkgs/workbench/cldemo-wbench-base-puppet/debian/etc/puppet/modules/stdlib
 	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "pkgs/workbench/cldemo-wbench-base-ansible/debian/home/cumulus/ansibledemos/cumulus-linux-ansible-modules"]
+	path = pkgs/workbench/cldemo-wbench-base-ansible/debian/home/cumulus/ansibledemos/cumulus-linux-ansible-modules
+	url = git@github.com:CumulusNetworks/cumulus-linux-ansible-modules.git
