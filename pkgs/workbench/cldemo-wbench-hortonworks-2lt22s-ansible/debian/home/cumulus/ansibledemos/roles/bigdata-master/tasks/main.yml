@@ -1,0 +1,41 @@
+---
+- name: format filesystem for hdfs namenode
+  shell:  '/usr/lib/hadoop/bin/hadoop namenode -format'
+  sudo: yes
+  sudo_user: hdfs
+  args:
+    creates: /grid/hadoop/hdfs/nn/current/VERSION
+
+- name: enable and start hadoop namenode service
+  service: name=hadoop-namenode state=started enabled=yes
+
+- name: enable and start yarn resourcemanager service
+  service: name=yarn-resourcemanager state=started enabled=yes
+
+- name: create storage for mapreduce jobhistory service
+  shell: /bin/bash -ic 'hadoop fs {{item}}'
+  sudo: yes
+  sudo_user: hdfs
+  ignore_errors: yes
+  with_items:
+    - "-mkdir -p /mr-history/tmp"
+    - "-chmod -R 1777 /mr-history/tmp"
+    - "-mkdir -p /mr-history/done"
+    - "-chmod -R 1777 /mr-history/done"
+    - "-chown -R $MAPRED_USER:$HDFS_USER /mr-history"
+    - "-mkdir -p /app-logs"
+    - "-chmod -R 1777 /app-logs"
+    - "-chown yarn /app-logs"
+
+- name: enable and start mapreduce jobhistory service
+  service: name=mapred-historyserver state=started enabled=yes
+
+- name: create storage for client user
+  shell: /bin/bash -ic 'hadoop fs {{item}}'
+  sudo: yes
+  sudo_user: hdfs
+  ignore_errors: yes
+  with_items:
+    - "-mkdir -p /user/{{hadoop.client_user}}"
+    - "-chown {{hadoop.client_user}}:{{hadoop.client_user}} /user/{{hadoop.client_user}}"
+    - "-chmod -R 755 /user/{{hadoop.client_user}}"

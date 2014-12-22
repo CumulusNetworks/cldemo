@@ -1,0 +1,18 @@
+default menu.c32
+prompt 0
+timeout 100
+serial 0 115200 0
+
+menu title Cumulus CW - Ubuntu Server 14.04 LTS (Trusty Tahr) w/Ansible Boot menu
+
+label local
+	menu label ^0 - Boot from first hard drive
+	com32 chain.c32
+	append hd0
+
+label 1
+   menu label ^1 - Ubuntu Server 14.04 LTS (Trusty Tahr) w/Ansible
+   menu default
+   kernel ubuntu-installer-trusty/amd64/linux
+   append ks=http://192.168.0.1/ubuntuserver-trusty-ansible-ks.cfg vga=normal initrd=ubuntu-installer-trusty/amd64/initrd.gz -- console=ttyS0,115200 ksdevice=bootif
+   ipappend 2

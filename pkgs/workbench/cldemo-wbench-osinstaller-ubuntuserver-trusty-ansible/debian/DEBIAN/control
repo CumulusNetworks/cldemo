@@ -1,0 +1,9 @@
+Package: cldemo-wbench-osinstaller-ubuntuserver-trusty-ansible
+Version: 0.3
+Section: base
+Priority: optional
+Architecture: all
+Depends: cldemo-wbench-osinstaller-ubuntuserver-trusty, cldemo-wbench-base-ansible
+Maintainer: Nat Morris <nat@cumulusnetworks.com>
+Description: Installation of Ubuntu Server 14.04 with Ansible servers
+   Installation of Ubuntu Server 14.04 onto servers with Ansible SSH keys

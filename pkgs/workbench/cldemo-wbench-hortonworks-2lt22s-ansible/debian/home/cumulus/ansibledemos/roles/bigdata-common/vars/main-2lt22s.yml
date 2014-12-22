@@ -1,0 +1,35 @@
+server_interfaces:
+  server1:
+    eth0:
+      address: 192.168.0.201
+      netmask: 255.255.255.0
+      gateway: 192.168.0.1
+    eth3:
+      address: 10.4.1.2
+      netmask: 255.255.255.192
+      up: ip route add 10.4.0.0/16 via 10.4.1.1 dev eth3
+
+  server2:
+    eth0:
+      address: 192.168.0.202
+      netmask: 255.255.255.0
+      gateway: 192.168.0.1
+    eth3:
+      address: 10.4.2.2
+      netmask: 255.255.255.192
+      up: ip route add 10.4.0.0/16 via 10.4.2.1 dev eth3
+
+hadoop:
+  primary_node: server1-hadoop
+  interface: eth3
+  client_user: client
+  mapreduce_map_java_opts: -Xmx768m
+  mapreduce_map_memory_mb: 1024
+  mapreduce_reduce_java_opts: -Xmx1536m
+  mapreduce_reduce_memory_mb: 2048
+  mapreduce_task_io_sort_mb: 384
+  yarn_app_mapreduce_am_command_opts: -Xmx768m
+  yarn_app_mapreduce_am_resource_mb: 1024
+  yarn_nodemanager_resource_memory_mb: 3072
+  yarn_scheduler_maximum_allocation_mb: 3072
+  yarn_scheduler_minimum_allocation_mb: 1024

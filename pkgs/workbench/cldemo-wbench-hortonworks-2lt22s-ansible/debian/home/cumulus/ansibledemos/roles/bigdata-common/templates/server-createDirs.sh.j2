@@ -1,0 +1,59 @@
+#!/bin/bash
+{{ header_tmpl }}
+
+. ./usersAndGroups.sh
+. ./directories.sh
+
+# On the node that hosts the NameNode service, execute the following commands:
+mkdir -p $DFS_NAME_DIR;
+chown -R $HDFS_USER:$HADOOP_GROUP $DFS_NAME_DIR;
+chmod -R 755 $DFS_NAME_DIR;
+
+# On all DataNodes, execute the following commands:
+echo "Create datanode local dir"
+mkdir -p $DFS_DATA_DIR;
+chown -R $HDFS_USER:$HADOOP_GROUP $DFS_DATA_DIR;
+chmod -R 750 $DFS_DATA_DIR;
+
+# On the ResourceManager and all DataNodes, execute the following commands:
+echo "Create yarn local dir"
+mkdir -p $YARN_LOCAL_DIR;
+chown -R $YARN_USER:$HADOOP_GROUP $YARN_LOCAL_DIR;
+chmod -R 755 $YARN_LOCAL_DIR;
+
+# On the ResourceManager and all DataNodes, execute the following commands:
+echo "Create yarn local log dir"
+mkdir -p $YARN_LOCAL_LOG_DIR;
+chown -R $YARN_USER:$HADOOP_GROUP $YARN_LOCAL_LOG_DIR;
+chmod -R 755 $YARN_LOCAL_LOG_DIR;
+
+# On all nodes, execute the following commands:
+mkdir -p $HDFS_LOG_DIR;
+chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_LOG_DIR;
+chmod -R 755 $HDFS_LOG_DIR;
+
+# On all nodes, execute the following commands:
+mkdir -p $HDFS_PID_DIR;
+chown -R $HDFS_USER:$HADOOP_GROUP $HDFS_PID_DIR;
+chmod -R 755 $HDFS_PID_DIR
+
+# On all nodes, execute the following commands:
+mkdir -p $YARN_LOG_DIR;
+chown -R $YARN_USER:$HADOOP_GROUP $YARN_LOG_DIR;
+chmod -R 755 $YARN_LOG_DIR;
+
+# On all nodes, execute the following commands:
+mkdir -p $YARN_PID_DIR;
+chown -R $YARN_USER:$HADOOP_GROUP $YARN_PID_DIR;
+chmod -R 755 $YARN_PID_DIR;
+
+# On all nodes, execute the following commands:
+mkdir -p $MAPRED_LOG_DIR;
+chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_LOG_DIR;
+chmod -R 755 $MAPRED_LOG_DIR;
+
+# On all nodes, execute the following commands:
+mkdir -p $MAPRED_PID_DIR;
+chown -R $MAPRED_USER:$HADOOP_GROUP $MAPRED_PID_DIR;
+chmod -R 755 $MAPRED_PID_DIR;
+
