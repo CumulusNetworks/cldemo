@@ -6,10 +6,17 @@
 #
 #--------------------------------------------------------------------------
 
+# current branch
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+BRANCHREPO="br_$BRANCH"
+DESTOK=0
+DESTERR=""
+
 # check params
-while getopts "r:" opt; do
+while getopts "r:n" opt; do
     case "$opt" in
         r) repo=$OPTARG ;;
+        n) DESTOK=1 ;;
     esac
 done
 shift $(( OPTIND - 1))
@@ -19,12 +26,6 @@ if [[ -z "$repo" ]]; then
     echo "ERROR: Repo not specified"
     exit 1
 fi
-
-# current branch
-BRANCH=`git rev-parse --abbrev-ref HEAD`
-BRANCHREPO="br_$BRANCH"
-DESTOK=0
-DESTERR=""
 
 echo ""
 echo "Publish from branch '$BRANCH' to repo '$repo'"

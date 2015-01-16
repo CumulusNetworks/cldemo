@@ -1,14 +1,9 @@
-node 'wbench.lab.local' {
-  include librenms
-}
-
 node 'spine1.lab.local' {
     $int_enabled = true
     $int_loopback = '10.2.1.3'
     $int_unnumbered = [ 'swp49', 'swp50', 'swp51', 'swp52' ]
     $int_bridges = { }
-    include ospfunnum::role::switchbase,
-    snmpd
+    include monitoring::role::gangliaswitch
 }
 
 node 'spine2.lab.local' {
@@ -16,8 +11,7 @@ node 'spine2.lab.local' {
     $int_loopback = '10.2.1.4'
     $int_unnumbered = [ 'swp49', 'swp50', 'swp51', 'swp52' ]
     $int_bridges = { }
-    include ospfunnum::role::switchbase,
-    snmpd
+    include monitoring::role::gangliaswitch
 }
 
 node 'leaf1.lab.local' {
@@ -32,12 +26,11 @@ node 'leaf1.lab.local' {
                   'netmask' => '255.255.255.128',
                   'members' => ['swp32s1'] }
     }
-    include ospfunnum::role::switchbase,
-    snmpd
-    class { 'portsconf' : 
+    include monitoring::role::gangliaswitch
+    class { 'portsconf' :
       switchtype => '40G',
       stage      => 'setup',
-    } 
+    }
 }
 
 node 'leaf2.lab.local' {
@@ -52,10 +45,17 @@ node 'leaf2.lab.local' {
                   'netmask' => '255.255.255.128',
                   'members' => ['swp32s1'] }
     }
-    include ospfunnum::role::switchbase,
-    snmpd
+    include monitoring::role::gangliaswitch
     class { 'portsconf' :
       switchtype => '40G',
       stage      => 'setup',
     }
+}
+
+node 'wbench.lab.local' {
+    $data_sources = [ 'wbench.lab.local' ]
+    $websites = [
+      { title => 'Ganglia', location => 'ganglia/' }
+    ]
+    include monitoring::role::gangliawbench
 }
