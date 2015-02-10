@@ -7,6 +7,8 @@ _sflow._udp     30      SRV     0 0 6343 wbench
 _sflow._udp     30      TXT     (
 "txtvers=1"
 "sampling.1G=64"
+"sampling.10G=128"
+"sampling.40G=128"
 "polling=10"
 ) " >> /etc/bind/zones/db.lab.local
 service bind9 restart
