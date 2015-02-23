@@ -1,6 +1,6 @@
 name             'portsconf'
 maintainer       'Cumulus Networks'
-maintainer_email 'YOUR_EMAIL'
+maintainer_email 'ce-ceng@cumulusnetworks.com'
 license          'All rights reserved'
 description      'Configures ports on T2 switches'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))

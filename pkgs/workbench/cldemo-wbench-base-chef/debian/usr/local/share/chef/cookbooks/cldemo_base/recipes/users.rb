@@ -7,7 +7,7 @@
 
 
 node["cldemo"]["users"].each_with_index do |login,index|
-	user "#{login}" do
+	user login do
 		comment     "#{login.capitalize} user"
 		uid         600+index
 		password    "$1$mKzk5zJc$rjQIr24v.ZF27J7TAaZxQ."
@@ -42,7 +42,7 @@ node["cldemo"]["users"].each_with_index do |login,index|
 end
 
 node["cldemo"]["groups"].each do |group|
-	group "#{group}" do
+	group group do
 		append      true
 		members     node["cldemo"]["users"]
 	end
