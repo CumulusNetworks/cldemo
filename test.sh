@@ -35,7 +35,7 @@ done
 
 # Lint the Puppet manifests
 printf "***\nChecking Puppet manifests...\n***\n"
-puppet-lint --with-filename --with-context pkgs/workbench/cldemo-wbench-*puppet*/debian/etc/puppet/**/*.pp
+puppet-lint pkgs/workbench/cldemo-wbench-*puppet*/debian/etc/puppet/**/*.pp
 if [ $? -ne 0 ]; then
   printf "***\nPUPPET CHECKS FAILED\n***\n"
   RET_SUCCESS=1
