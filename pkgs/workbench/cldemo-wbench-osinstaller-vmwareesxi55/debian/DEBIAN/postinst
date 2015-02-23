@@ -7,7 +7,7 @@ ISOMNT=/mnt/esxicd
 PXEDIR=/var/lib/tftpboot/pxe
 ESXDIR=esxi55
 BOOTCFG=$PXEDIR/$ESXDIR/boot.cfg
-OVFTOOLURL=http://mirror.cwb.cumulusnetworks.com/vmware/VMware-ovftool-3.5.0-1274719-lin.x86_64.bundle
+OVFTOOLURL=http://mirror.cwb.cumulusnetworks.com/vmware/VMware-ovftool-4.0.0-2301625-lin.x86_64.bundle
 OVFTOOLTMP=/tmp/ovftool.bundle
 
 # download esxi iso
