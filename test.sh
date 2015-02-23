@@ -51,7 +51,7 @@ fi
 
 # Lint the Chef cookbooks
 printf "***\nChecking Chef cookbooks...\n***\n"
-foodcritic --epic-fail any --context pkgs/workbench/cldemo-wbench-*chef*/debian/usr/local/share/chef/cookbooks/
+foodcritic --epic-fail any --tags ~FC003 --context pkgs/workbench/cldemo-wbench-*chef*/debian/usr/local/share/chef/cookbooks/
 if [ $? -ne 0 ]; then
   printf "***\nCHEF CHECKS FAILED\n***\n"
   RET_SUCCESS=1
