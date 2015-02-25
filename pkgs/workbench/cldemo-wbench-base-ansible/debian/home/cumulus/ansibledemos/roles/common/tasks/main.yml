@@ -11,7 +11,8 @@
 - name: License switch
   cl_license: >
     src="http://{{ cl_license_server }}/{{ ansible_hostname }}.lic"
-    restart_switchd=yes
+  notify:
+    - restart switchd
 
 - name: configure ptmd topology.dot
   copy: src=topology.dot dest=/etc/ptm.d/topology.dot
