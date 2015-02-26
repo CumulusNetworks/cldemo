@@ -22,11 +22,11 @@ class ldap::params {
       $db_prefix       = '/var/lib/ldap'
       $ssl_prefix      = '/etc/ssl/certs'
       case $::operatingsystem {
-	'Ubuntu': {
-           $server_run      = '/var/run/slapd'
+  'Ubuntu': {
+          $server_run      = '/var/run/slapd'
         }
-        default:  { 
-           $server_run      = '/var/run/openldap'
+        default:  {
+          $server_run      = '/var/run/openldap'
         }
       }
 
