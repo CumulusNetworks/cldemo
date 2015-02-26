@@ -66,8 +66,8 @@ node 'leaf1.lab.local' {
 
     include ibgp::role::switchbase
     class { 'portsconf' :
-      switchtype  => '40G',
-      stage       => 'setup',
+      switchtype => '40G',
+      stage      => 'setup',
     }
 }
 
@@ -95,7 +95,7 @@ node 'leaf2.lab.local' {
 
     include ibgp::role::switchbase
     class { 'portsconf' :
-      switchtype  => '40G',
-      stage       => 'setup',
+      switchtype => '40G',
+      stage      => 'setup',
     }
 }
