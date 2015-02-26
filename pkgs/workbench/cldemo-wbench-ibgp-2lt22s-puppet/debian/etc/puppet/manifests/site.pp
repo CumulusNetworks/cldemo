@@ -46,10 +46,10 @@ node 'leaf1.lab.local' {
     $int_enabled = true
     $int_loopback = '10.2.1.1'
     $int_layer3 = {
-        swp49 => { 'address' => '10.1.1.1', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
-        swp50 => { 'address' => '10.1.1.5', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
-        swp51 => { 'address' => '10.1.1.33', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
-        swp52 => { 'address' => '10.1.1.37', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 }
+        swp1s0 => { 'address' => '10.1.1.1', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
+        swp1s1 => { 'address' => '10.1.1.5', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
+        swp1s2 => { 'address' => '10.1.1.33', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
+        swp1s3 => { 'address' => '10.1.1.37', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 }
     }
     $int_bridges = {
         br0 => { 'address' => '10.4.1.1', 'netmask' => '255.255.255.128', 'cidr_netmask' => 25 , 'members' => ['swp32s0'] },
@@ -75,10 +75,10 @@ node 'leaf2.lab.local' {
     $int_enabled = true
     $int_loopback = '10.2.1.2'
     $int_layer3 = {
-        swp1  => { 'address' => '10.1.1.17', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
-        swp2  => { 'address' => '10.1.1.21', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
-        swp17 => { 'address' => '10.1.1.49', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
-        swp18 => { 'address' => '10.1.1.53', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 }
+        swp1s0 => { 'address' => '10.1.1.17', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
+        swp1s1 => { 'address' => '10.1.1.21', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
+        swp1s2 => { 'address' => '10.1.1.49', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 },
+        swp1s3 => { 'address' => '10.1.1.53', 'netmask' => '255.255.255.252', 'cidr_netmask' => 30 }
     }
     $int_bridges = {
         br0 => { 'address' => '10.4.2.1', 'netmask' => '255.255.255.128', 'cidr_netmask' => 25, 'members' => ['swp32s0'] },
