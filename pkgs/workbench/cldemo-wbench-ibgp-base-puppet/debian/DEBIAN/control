@@ -1,9 +1,9 @@
 Package: cldemo-wbench-ibgp-base-puppet
-Version: 0.1-3
+Version: 0.1-4
 Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-base-puppet
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com, Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Puppet, PTM and iBGP IPv4
   Puppet, iBGP IPv4 and PTM

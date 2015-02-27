@@ -22,8 +22,8 @@ router bgp <%= @bgp["myasn"] %>
 <%   @bgp["peergroupv4"].each do |peergroup| -%>
   neighbor <%= peergroup["name"] %> peer-group
   neighbor <%= peergroup["name"] %> remote-as <%= peergroup["asn"] %>
-<%     if peergroup["name"]["routereflectorclient"] -%>
-  neighbor <% peergroup["name"] %> route-reflector-client
+<%     if peergroup["rrclient"] -%>
+  neighbor <%= peergroup["name"] %> route-reflector-client
 <%     end -%>
 <%     peergroup["peers"].each do |peer| -%>
   neighbor <%= peer %> peer-group <%= peergroup["name"] %>

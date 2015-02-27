@@ -9,11 +9,12 @@ node 'spine1.lab.local' {
     }
     $int_bridges = { }
     $bgp = {
-        myasn => 65000,
+        myasn       => 65000,
         peergroupv4 => [ {
-          name  => 'leafs',
-          asn   => 65000,
-          peers => [ '10.1.1.1','10.1.1.5','10.1.1.49','10.1.1.53' ]
+          name      => 'leafs',
+          asn       => 65000,
+          rrclient  => true,
+          peers     => [ '10.1.1.1','10.1.1.5','10.1.1.49','10.1.1.53' ]
         } ]
     }
 
@@ -31,11 +32,12 @@ node 'spine2.lab.local' {
     }
     $int_bridges = { }
     $bgp = {
-        myasn => 65000,
+        myasn       => 65000,
         peergroupv4 => [ {
-          name  => 'leafs',
-          asn   => 65000,
-          peers => [ '10.1.1.17','10.1.1.21','10.1.1.33','10.1.1.37' ]
+          name      => 'leafs',
+          asn       => 65000,
+          rrclient  => true,
+          peers     => [ '10.1.1.17','10.1.1.21','10.1.1.33','10.1.1.37' ]
         } ]
     }
 
