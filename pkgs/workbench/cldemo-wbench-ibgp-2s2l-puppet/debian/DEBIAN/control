@@ -1,9 +1,0 @@
-Package: cldemo-wbench-ibgp-2s2l-puppet
-Version: 0.3-1
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-ibgp-base-puppet
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com, Nat Morris <nat@cumulusnetworks.com>
-Description: 2 leaf 2 spine; Puppet, PTM and iBGP IPv4
-  4 switch lab, managed by Puppet, iBGP IPv4 and PTM
