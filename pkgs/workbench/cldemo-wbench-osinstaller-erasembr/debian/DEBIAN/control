@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-tftpd
-Maintainer: Matt Willsher <mwillsher@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Erase MBR on block devices on the booted server
     Simple bootable kernel and initrd to erase disk MBRs via PXE

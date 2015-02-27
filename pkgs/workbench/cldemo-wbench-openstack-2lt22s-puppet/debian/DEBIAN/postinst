@@ -1,14 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-# remove the script if it exists
-if [ -f /var/www/provision.sh ]; then
-    rm /var/www/provision.sh
-fi
-
-# link the new one
-ln -s /var/www/provision-openstack.sh /var/www/provision.sh
-
 # copy topology.dot for ptmd to proper directory
 if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
       cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot

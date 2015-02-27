@@ -1,7 +1,7 @@
 {
   "id": "leaf2",
   "loopback": { "address": "10.2.1.2" },
-	"unnumbered": [ "swp1s0", "swp1s1", "swp1s2", "swp1s3" ],
+  "unnumbered": [ "swp1s0","swp1s1","swp1s2","swp1s3" ],
   "bridges": [
    {
     "name": "br0",

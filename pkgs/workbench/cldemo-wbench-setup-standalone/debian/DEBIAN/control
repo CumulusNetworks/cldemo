@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Depends: ubuntu-standard, cldemo-wbench-base
 Architecture: all
-Maintainer: Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Pre-configures a fresh Ubuntu Server VM
     Installs dependencies such as Apache2, BIND9, ISC DHCPd

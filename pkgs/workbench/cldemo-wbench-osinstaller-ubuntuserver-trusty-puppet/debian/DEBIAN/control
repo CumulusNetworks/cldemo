@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-osinstaller-ubuntuserver-trusty
-Maintainer: Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Installation of Ubuntu Server 14.04 with Puppet servers
    Installation of Ubuntu Server 14.04 onto servers with Puppet agent

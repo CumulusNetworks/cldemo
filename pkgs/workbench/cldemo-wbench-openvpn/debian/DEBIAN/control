@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: openvpn, cldemo-wbench-base
-Maintainer: Nat Morris <nat@cumulusnetworks.com>, Leslie Carr <leslie@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Pre-configured OpenVPN and TunnelBlick config
   Sets up preconfigured OpenVPN

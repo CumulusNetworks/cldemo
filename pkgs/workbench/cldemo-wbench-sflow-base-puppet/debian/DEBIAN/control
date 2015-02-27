@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-sflow-base, cldemo-wbench-ospfunnum-base-puppet
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com, Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: sflow puppet base
   Setup hsflowd on the switch and display monitoring examples

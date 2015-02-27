@@ -4,7 +4,7 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-librenms-base, cldemo-wbench-librenms-base-puppet, cldemo-wbench-openvpn
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com>, Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Technology specific puppet configuration files for LibreNMS installation
   Files to allow puppet to configure the server and switches to use librenms
   Thank you to the Wikimedia Foundation for the basis of this module - 

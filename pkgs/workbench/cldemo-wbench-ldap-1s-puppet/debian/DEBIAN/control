@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-ldap-server-puppet,cldemo-wbench-ldap-client-puppet
-Maintainer: Matt Willsher <mwillsher@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: 1 switch LDAP client demonstration
   Sets LDAP entries so one switches uses LDAP for NSS and PAM.

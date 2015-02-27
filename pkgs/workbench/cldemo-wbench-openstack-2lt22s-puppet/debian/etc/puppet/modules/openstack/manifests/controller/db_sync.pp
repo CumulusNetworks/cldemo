@@ -26,24 +26,4 @@ class openstack::controller::db_sync {
     require     => Exec['/usr/bin/touch /tmp/puppet_once_lock_keystone_db_sync'],
   }
 
-# workaround to only execute nova-compute db sync once
-exec { '/usr/bin/touch /tmp/puppet_once_lock_nova_compute_db_sync':
-  creates => '/tmp/puppet_once_lock_nova_compute_db_sync',
-  notify  => Exec['/usr/bin/nova-manage db sync'],
-}
-
-exec { '/usr/bin/nova-manage db sync':
-  user        => 'nova',
-  refreshonly => true,
-  logoutput   => true,
-  require     => Exec['/usr/bin/touch /tmp/puppet_once_lock_nova_compute_db_sync'],
-  #     notify       => Service[ ['nova-api',
-  #                       'nova-cert',
-  #                       'nova-consoleauth',
-  #                       'nova-scheduler',
-  #                       'nova-conductor',
-  #                       'nova-novncproxy',
-  #                       'nova-compute',] ],
-  #
-}
 }

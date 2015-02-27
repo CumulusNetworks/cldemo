@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: tftpd-hpa, ipmitool, cldemo-wbench-base
-Maintainer: Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: TFTP server dependency for OS installs
     TFTP server dependency for OS installs, sets up tftpd-hpa

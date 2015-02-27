@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-tftpd
-Maintainer: Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: OS installer for VMWare ESXi 5.5
     OS installer for VMWare ESXi 5.5 hypervisor, for physical and virtual hosts via PXE. Includes ovftool.

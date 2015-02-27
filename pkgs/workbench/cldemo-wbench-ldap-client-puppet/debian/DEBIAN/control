@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-base-puppet
-Maintainer: Matt Willsher <mwillsher@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: LDAP client configured by Puppet
   Installs the modules and scripts to set up NSS and PAM LDAP clients

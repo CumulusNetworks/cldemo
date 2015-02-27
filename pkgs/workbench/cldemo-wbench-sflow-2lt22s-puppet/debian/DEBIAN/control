@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-sflow-base-puppet
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com, Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Setup sflow and ganglia web frontend 
   Setup the ganglia web front end and hsflowd on the switch to display monitoring examples

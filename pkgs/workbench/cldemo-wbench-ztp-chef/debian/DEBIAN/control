@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-base-chef
-Maintainer: Matt Willsher <mwillsher@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Zero touch provisioning script for Chef
     Bootstrap zero touch provisioning script for Chef

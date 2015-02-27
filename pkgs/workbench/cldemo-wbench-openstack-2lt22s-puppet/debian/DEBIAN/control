@@ -1,12 +1,9 @@
 Package: cldemo-wbench-openstack-2lt22s-puppet
-Version: 0.1-7
+Version: 0.2-0
 Section: base
 Priority: optional
 Architecture: all
-Depends: cldemo-wbench-openvpn, cldemo-wbench-base-puppet, cldemo-wbench-osinstaller-ubuntuserver-trusty-puppet
-Replaces: cldemo-wbench-ztp-puppet
-Provides: cldemo-wbench-ztp-puppet
-Conflicts: cldemo-wbench-ztp-puppet
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com>
+Depends: cldemo-wbench-openvpn, cldemo-wbench-base-puppet, cldemo-wbench-osinstaller-ubuntuserver-trusty-puppet, cldemo-wbench-ztp-puppet
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Openstack setup package for Puppet
   Tailored for the 2lt22s workbench setup

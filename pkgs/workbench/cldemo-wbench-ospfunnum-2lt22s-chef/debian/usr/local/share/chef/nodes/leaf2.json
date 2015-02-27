@@ -6,5 +6,5 @@
 
     ]
   },
-  "run_list": ["role[switch]","recipe[cldemo_ospf_unnumbered]"]
+  "run_list": ["role[switch]","recipe[portsconf::forty_gbe]","recipe[cldemo_ospf_unnumbered]"]
 }

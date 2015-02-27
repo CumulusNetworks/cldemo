@@ -3,8 +3,8 @@
 pushd /usr/local/share/chef
 	knife node from file nodes/leaf1.json
 	knife node from file nodes/leaf2.json
-  knife node from file nodes/spine1.json
-  knife node from file nodes/spine2.json
+	knife node from file nodes/spine1.json
+	knife node from file nodes/spine2.json
 
 	pushd data_bags
 		knife data bag from file interfaces interfaces

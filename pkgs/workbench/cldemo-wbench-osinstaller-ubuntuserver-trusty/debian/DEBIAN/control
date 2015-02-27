@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-osinstaller-ubuntuserver
-Maintainer: Matt Willsher <mwillsher@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Installation of Ubuntu Server 14.04 onto servers
    Installation of Ubuntu Server 14.04 onto servers

@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-tftpd, lftp
-Maintainer: Nat Morris <nat@cumulusnetworks.com>, Matt Willsher <mwillsher@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Supporting tools for Ubuntu Linux operating system installation
    Supporting tools for Ubuntu Linux operating system installation

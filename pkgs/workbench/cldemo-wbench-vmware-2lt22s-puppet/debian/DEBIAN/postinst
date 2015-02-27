@@ -1,29 +1,23 @@
 #!/usr/bin/env bash
 set -e
 
-# remove the script if it exists
-if [ -f /var/www/provision.sh ]; then
-    rm /var/www/provision.sh
-fi
+# copy correct topology.dot for /var/www/topology.dot
+ln -fs /var/www/topology-clos-2lt22s.dot /var/www/topology.dot
+
+# copy correct topology.dot for /var/www/topology.dot
+ln -fs /var/www/topology-clos-2lt22s.dot /var/www/topology.dot
 
 # copy topology.dot for ptmd to proper directory
 if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
       cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
 fi
 
-# link the new one
-ln -s /var/www/provision-vmware-demo.sh /var/www/provision.sh
-
 # make sure opt 239 is enabled in dhcp
 sed -i /etc/dhcp/dhcpd.pools -e 's/# option cumulus-provision-url/option cumulus-provision-url/'
 service isc-dhcp-server restart
 
 #install required puppet modules
-/usr/bin/puppet module install puppetlabs/keystone
-/usr/bin/puppet module install puppetlabs-mysql
 /usr/bin/puppet module install puppetlabs/stdlib
-/usr/bin/puppet module install puppetlabs/rabbitmq
-/usr/bin/puppet module upgrade --force puppetlabs/keystone
 
 # link site.pp (TEMP)
 if [ ! -f /etc/puppet/manifests/site.pp ]; then

@@ -25,9 +25,8 @@ class openstack::interfaces {
         }
 
     exec { '/sbin/ifup bond0':
-        onlyif    => "/usr/bin/test ! -e /proc/net/bonding/bond0",
         logoutput => on_failure,
-        require   => File['/etc/network/interfaces/']
+        require   => Exec['/sbin/ip link set dev eth2 up; /sbin/ip link set dev eth3 up']
         }
 
   }

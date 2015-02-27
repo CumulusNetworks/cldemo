@@ -13,6 +13,7 @@ sleep 5
 pushd /usr/local/share/chef
 	knife cookbook upload sysctl 
 	knife cookbook upload cldemo_base
+	knife cookbook upload portsconf
 	knife role from file roles/switch.json
 
 	# Load Data Bags

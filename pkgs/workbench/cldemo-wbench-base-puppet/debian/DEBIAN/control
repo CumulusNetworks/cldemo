@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: puppetmaster, cldemo-wbench-base, cldemo-wbench-ztp-puppet, puppet
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com, Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Puppetmaster basic configuration
   Setup the puppetmaster, fileserver, autosigning etc

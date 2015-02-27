@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-base ,apt-mirror
-Maintainer: Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Pre-configured apt-mirror of repo.cumulusnetworks.com
   Repo includes all Cumulus Linux packages for 1.5 and 2.0 branches for powerpc

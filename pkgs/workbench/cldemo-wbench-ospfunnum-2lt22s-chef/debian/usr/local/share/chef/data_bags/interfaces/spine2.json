@@ -2,5 +2,5 @@
 	"id": "spine2",
 	"loopback": { "address": "10.2.1.4" },
 	"unnumbered": [ "swp49", "swp50", "swp51", "swp52" ],
-	"bridges": [ ]
+	"bridges": []
 }

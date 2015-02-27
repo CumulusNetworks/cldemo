@@ -79,10 +79,10 @@
 - name: create hadoop data directories
   command: /bin/bash createDirs.sh
   args:
-    chdir: /etc/hadoop/conf 
+    chdir: /etc/hadoop/conf
 
 - name: create init scripts
-  template: src=server-init-script.j2 
+  template: src=server-init-script.j2
             dest=/etc/init.d/{{item.serviceclass}}-{{item.service}}
             mode=755
   with_items:

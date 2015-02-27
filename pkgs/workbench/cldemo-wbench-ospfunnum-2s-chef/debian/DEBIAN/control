@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-ospfunnum-base-chef
-Maintainer: Matt Willsher <mwillsher@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: 2 switch; Chef, PTM and OSPF Unnumbered IPv4
   2 switch lab, managed by Chef, OSPF Unnumbered IPv4 and PTM

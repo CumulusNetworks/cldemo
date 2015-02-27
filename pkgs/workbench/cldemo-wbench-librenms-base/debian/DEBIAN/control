@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-base
-Maintainer: Leslie Carr <leslie@cumulusnetworks.com>, Nat Morris <nat@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Base files for LibreNMS installation
   Base files for LibreNMS installation, includes submodule of librenms

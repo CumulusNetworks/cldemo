@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: ansible, cldemo-wbench-base, cldemo-wbench-ztp-ansible
-Maintainer: Nat Morris <nat@cumulusnetworks.com>, Stanley Karunditu <stanleyk@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Ansible basic configuration
   Setup ansible and generate SSH keys

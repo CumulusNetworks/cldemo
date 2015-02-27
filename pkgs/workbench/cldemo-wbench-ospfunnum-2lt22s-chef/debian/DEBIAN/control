@@ -5,5 +5,5 @@ Priority: optional
 Architecture: all
 Depends: cldemo-wbench-ospfunnum-base-chef
 Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: 2 leaf, 2 spine T2; Chef, PTM and OSPF Unnumbered IPv4
-  2 leaf 2 spine T2 lab, managed by Chef, OSPF Unnumbered IPv4 and PTM
+Description: 2 (T2) leaf 2 spine; Chef, PTM and OSPF Unnumbered IPv4
+  4 switch lab, managed by Chef, OSPF Unnumbered IPv4 and PTM

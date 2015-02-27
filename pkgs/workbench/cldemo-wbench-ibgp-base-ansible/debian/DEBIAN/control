@@ -4,6 +4,6 @@ Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-base-ansible
-Maintainer: Nat Morris <nat@cumulusnetworks.com>, Stanley Karunditu <stanleyk@cumulusnetworks.com>
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Ansible, PTM and iBGP IPv4
   Ansible, iBGP IPv4 and PTM

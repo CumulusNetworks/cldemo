@@ -95,6 +95,9 @@ tmux bind-key C-p run 'tmux set-buffer CumulusLinux!; tmux paste-buffer'
 # ctrl-b ctrl-c = cumulus
 tmux bind-key C-c run 'tmux set-buffer cumulus; tmux paste-buffer'
 
+# ctrl-b ctrl-s synchronize window panes 
+tmux bind-key C-s set-window-option synchronize-panes
+
 # set up mouse
 if [[ $mouse == 1 ]]
 then

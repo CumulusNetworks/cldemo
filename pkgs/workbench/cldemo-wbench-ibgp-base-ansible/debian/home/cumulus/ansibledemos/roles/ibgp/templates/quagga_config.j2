@@ -29,15 +29,3 @@ router bgp {{ bgpvars.myasn }}
  {% endfor %}
 {% endif -%}
 !
-{% if intvars.int_unnumbered is defined -%}
-{% for item in intvars.int_unnumbered -%}
-  no passive-interface {{ item }}
-{% endfor %}
-{% endif -%}
-  network {{ loopback_ip }}/32 area 0.0.0.0
-{% if hostnetranges is defined and is_leaf is defined -%}
-  {% for item in hostnetranges %}
-  network {{ item }} area 0.0.0.0
-  {% endfor %}
-{% endif -%}
-!
