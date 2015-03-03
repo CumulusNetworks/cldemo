@@ -164,9 +164,12 @@ then
              then
                tmux send-keys -t 0 "cw-mux-helper $MUXTYPE spine1" 'C-m'
                tmux send-keys -t 1 "cw-mux-helper $MUXTYPE spine2" 'C-m'
+               tmux send-keys -t 2 "cw-mux-helper $MUXTYPE leaf1" 'C-m'
+               tmux send-keys -t 3 "cw-mux-helper $MUXTYPE leaf2" 'C-m'
+             else
+               tmux send-keys -t 0 "cw-mux-helper $MUXTYPE leaf1" 'C-m'
+               tmux send-keys -t 1 "cw-mux-helper $MUXTYPE leaf2" 'C-m'
              fi
-             tmux send-keys -t 2 "cw-mux-helper $MUXTYPE leaf1" 'C-m'
-             tmux send-keys -t 3 "cw-mux-helper $MUXTYPE leaf2" 'C-m'
         else
             echo "Unusual number of switches"
         fi
