@@ -22,6 +22,7 @@ router bgp {{ bgpvars.myasn }}
  neighbor {{ groupname }} remote-as {{ bgpvars.peergroupv4[groupname].peerasn }}
  {% if bgpvars.peergroupv4[groupname].routereflectorclient is defined -%}
  neighbor {{ groupname }} route-reflector-client
+ neighbor {{ groupname }} next-hop-self force
  {% endif -%}
  {% for peer in bgpvars.peergroupv4[groupname].peers %}
  neighbor {{ peer }} peer-group {{ groupname }}

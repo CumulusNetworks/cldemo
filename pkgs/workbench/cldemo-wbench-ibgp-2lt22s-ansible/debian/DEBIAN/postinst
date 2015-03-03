@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+# copy correct topology.dot for /var/www/topology.dot
+ln -fs /var/www/topology-clos-2lt22s.dot /var/www/topology.dot
+
+# copy topology.dot for ptmd to proper directory
+if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
+      cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+fi
+
+# set /home/cumulus files to use cumulus:cumulus ownership
+chown -R cumulus:cumulus /home/cumulus
+
+exit 0
