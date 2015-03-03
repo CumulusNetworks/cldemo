@@ -6,6 +6,8 @@ set -e
 ln -fs /var/www/topology-clos-2lt22s.dot /var/www/topology.dot
 
 # copy topology.dot for ptmd to proper directory
-cp -f /var/www/topology.dot /home/cumulus/ansibledemos/roles/common/files
+if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
+    cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+fi
 
 exit 0
