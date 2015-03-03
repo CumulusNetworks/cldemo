@@ -10,6 +10,7 @@ SNAME="cw-mux"
 
 # look for wbench.json
 JSONPATH=""
+SHOWSPINE="0"
 if [ -f "wbench.json" ]
 then
     JSONPATH="wbench.json"
@@ -23,16 +24,19 @@ fi
 
 mouse=0
 
-while getopts "mh" arg; do
+while getopts "mhs" arg; do
     case $arg in
     h)
-        echo "usage: $( basename $0 ) [-m]" 
+        echo "usage: $( basename $0 ) [-m]"
         echo "     -m        Enable mouse mode"
+        echo "     -s        Show spine windows"
 	exit 0
         ;;
     m)
         mouse=1
         echo "Enabling mouse"
+        ;;
+    s)  SHOWSPINE="1"
         ;;
     esac
 done
@@ -95,7 +99,7 @@ tmux bind-key C-p run 'tmux set-buffer CumulusLinux!; tmux paste-buffer'
 # ctrl-b ctrl-c = cumulus
 tmux bind-key C-c run 'tmux set-buffer cumulus; tmux paste-buffer'
 
-# ctrl-b ctrl-s synchronize window panes 
+# ctrl-b ctrl-s synchronize window panes
 tmux bind-key C-s set-window-option synchronize-panes
 
 # set up mouse
@@ -150,11 +154,17 @@ then
         elif [ "$NUMSWITCHES" -eq "4" ]
         then
              tmux split-window -d -t 0 -v
-             tmux split-window -d -t 0 -h
-             tmux split-window -d -t 2 -h
+             if [ "$SHOWSPINE" -eq "1" ]
+             then
+               tmux split-window -d -t 0 -h
+               tmux split-window -d -t 2 -h
+             fi
              tmux select-layout tiled
-             tmux send-keys -t 0 "cw-mux-helper $MUXTYPE spine1" 'C-m'
-             tmux send-keys -t 1 "cw-mux-helper $MUXTYPE spine2" 'C-m'
+             if [ "$SHOWSPINE" -eq "1" ]
+             then
+               tmux send-keys -t 0 "cw-mux-helper $MUXTYPE spine1" 'C-m'
+               tmux send-keys -t 1 "cw-mux-helper $MUXTYPE spine2" 'C-m'
+             fi
              tmux send-keys -t 2 "cw-mux-helper $MUXTYPE leaf1" 'C-m'
              tmux send-keys -t 3 "cw-mux-helper $MUXTYPE leaf2" 'C-m'
         else
