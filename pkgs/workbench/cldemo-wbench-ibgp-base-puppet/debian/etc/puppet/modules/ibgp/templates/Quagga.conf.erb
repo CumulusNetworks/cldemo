@@ -15,10 +15,7 @@ router-id <%= @int_loopback %>
 router bgp <%= @bgp["myasn"] %>
   bgp router-id <%= int_loopback %>
   bgp log-neighbor-changes
-  network <%= @int_loopback %>/32
-<%     @int_bridges.each_pair do |bridge, options| -%>
-  network <%= options["address"] %>/<%= options["cidr_netmask"] %>
-<%     end -%>
+  redistribute connected
 <%   @bgp["peergroupv4"].each do |peergroup| -%>
   neighbor <%= peergroup["name"] %> peer-group
   neighbor <%= peergroup["name"] %> remote-as <%= peergroup["asn"] %>
