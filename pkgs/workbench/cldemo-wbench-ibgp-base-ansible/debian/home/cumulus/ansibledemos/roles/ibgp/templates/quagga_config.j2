@@ -11,12 +11,7 @@ router-id {{ loopback_ip }}
 router bgp {{ bgpvars.myasn }}
  bgp router-id {{ loopback_ip }}
  bgp log-neighbor-changes
- network {{ loopback_ip }}/32
- {% if intvars.bridges is defined -%}
- {% for bridgename in swbridges.keys() -%}
- network {{ swbridges[bridgename].ip_and_mask }}
- {% endfor %}
- {% endif -%}
+ redistribute connected
  {% for groupname in bgpvars.peergroupv4.keys() -%}
  neighbor {{ groupname }} peer-group
  neighbor {{ groupname }} remote-as {{ bgpvars.peergroupv4[groupname].peerasn }}
