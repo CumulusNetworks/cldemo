@@ -1,3 +1,3 @@
 stage { 'last':
-	after => Stage['main']
+  after => Stage['main']
 }
