@@ -10,7 +10,7 @@ SNAME="cw-mux"
 
 # look for wbench.json
 JSONPATH=""
-SHOWSPINE="0"
+SHOWSPINE="1"
 if [ -f "wbench.json" ]
 then
     JSONPATH="wbench.json"
@@ -29,14 +29,14 @@ while getopts "mhs" arg; do
     h)
         echo "usage: $( basename $0 ) [-m]"
         echo "     -m        Enable mouse mode"
-        echo "     -s        Show spine windows"
+        echo "     -s        Hide spine windows"
 	exit 0
         ;;
     m)
         mouse=1
         echo "Enabling mouse"
         ;;
-    s)  SHOWSPINE="1"
+    s)  SHOWSPINE="0"
         ;;
     esac
 done
