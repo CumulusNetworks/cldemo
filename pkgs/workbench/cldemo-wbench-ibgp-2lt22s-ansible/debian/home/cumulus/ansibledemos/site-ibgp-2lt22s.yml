@@ -13,6 +13,7 @@
   user: root
   roles:
     - common
+    - portsconfig
     - ibgp
   vars_files:
     - roles/ibgp/vars/main-2lt22s.yml
