@@ -1,9 +1,9 @@
-Package: cldemo-wbench-ibgp-2s2l-ansible
-Version: 0.2
+Package: cldemo-wbench-ibgp-2lt22s-ansible
+Version: 0.1-2
 Section: base
 Priority: optional
 Architecture: all
 Depends: cldemo-wbench-ibgp-base-ansible
 Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: 2 leaf 2 spine; Ansible, PTM and iBGP IPv4
+Description: 2 leaf(T2) 2 spine; Ansible, PTM and iBGP IPv4
   4 switch lab, managed by Ansible, iBGP IPv4 and PTM

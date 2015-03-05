@@ -5,7 +5,7 @@
     - common
     - ibgp
   vars_files:
-    - roles/ibgp/vars/main-2s2l.yml
+    - roles/ibgp/vars/main-2lt22s.yml
   handlers:
     - include: handlers/main.yml
 
@@ -13,8 +13,9 @@
   user: root
   roles:
     - common
+    - portsconfig
     - ibgp
   vars_files:
-    - roles/ibgp/vars/main-2s2l.yml
+    - roles/ibgp/vars/main-2lt22s.yml
   handlers:
     - include : handlers/main.yml
