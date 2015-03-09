@@ -10,7 +10,7 @@ SNAME="cw-mux"
 
 # look for wbench.json
 JSONPATH=""
-SHOWSPINE="1"
+SHOW="0"
 if [ -f "wbench.json" ]
 then
     JSONPATH="wbench.json"
@@ -24,19 +24,22 @@ fi
 
 mouse=0
 
-while getopts "mhs" arg; do
+while getopts "mhsl" arg; do
     case $arg in
     h)
-        echo "usage: $( basename $0 ) [-m]"
+        echo "usage: $( basename $0 ) [-msl]"
         echo "     -m        Enable mouse mode"
-        echo "     -s        Hide spine windows"
+        echo "     -s        Show spine windows only"
+        echo "     -l        Show leaf windows only"
 	exit 0
         ;;
     m)
         mouse=1
         echo "Enabling mouse"
         ;;
-    s)  SHOWSPINE="0"
+    s)  SHOW="1"
+        ;;
+    l)  SHOW="2"
         ;;
     esac
 done
@@ -127,6 +130,9 @@ tmux set-option -t $SNAME status-right "#[bg=black] #[fg=white] $WBENCHCLASS #[f
 # Password binding
 
 tmux bind-key C-p run 'tmux set-buffer CumulusLinux!; tmux paste-buffer'
+tmux bind-key C-l run 'tmux break-pane -d -t 0; tmux break-pane -d -t 1'
+tmux bind-key C-l run 'tmux break-pane -d -t 0; tmux break-pane -d -t 1'
+
 
 # workbench
 tmux new-window -t $SNAME -n Workbench
@@ -154,21 +160,26 @@ then
         elif [ "$NUMSWITCHES" -eq "4" ]
         then
              tmux split-window -d -t 0 -v
-             if [ "$SHOWSPINE" -eq "1" ]
+             if [ "$SHOW" -eq "0" ]
              then
                tmux split-window -d -t 0 -h
                tmux split-window -d -t 2 -h
              fi
              tmux select-layout tiled
-             if [ "$SHOWSPINE" -eq "1" ]
+             if [ "$SHOW" -eq "0" ]
              then
                tmux send-keys -t 0 "cw-mux-helper $MUXTYPE spine1" 'C-m'
                tmux send-keys -t 1 "cw-mux-helper $MUXTYPE spine2" 'C-m'
                tmux send-keys -t 2 "cw-mux-helper $MUXTYPE leaf1" 'C-m'
                tmux send-keys -t 3 "cw-mux-helper $MUXTYPE leaf2" 'C-m'
-             else
+             elif [ "$SHOW" -eq "2" ]
+             then
                tmux send-keys -t 0 "cw-mux-helper $MUXTYPE leaf1" 'C-m'
                tmux send-keys -t 1 "cw-mux-helper $MUXTYPE leaf2" 'C-m'
+             elif [ "$SHOW" -eq "1" ]
+             then
+               tmux send-keys -t 0 "cw-mux-helper $MUXTYPE spine1" 'C-m'
+               tmux send-keys -t 1 "cw-mux-helper $MUXTYPE spine2" 'C-m'
              fi
         else
             echo "Unusual number of switches"
