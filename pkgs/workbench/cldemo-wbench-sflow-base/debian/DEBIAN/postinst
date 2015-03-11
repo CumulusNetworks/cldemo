@@ -1,4 +1,10 @@
 #!/bin/bash
+set -e
+#installing sflow-rt
+/usr/bin/wget http://www.inmon.com/products/sFlow-RT/sflow-rt.tar.gz -O /tmp/sflow-rt.tar.gz
+tar -C /usr/local/ -xvzf /tmp/sflow-rt.tar.gz
+
+update-rc.d sflow-rt defaults
 if [ -e /usr/bin/ovs-vsctl ]; 
   then update-rc.d sflowovsd defaults; 
 fi 
@@ -13,7 +19,6 @@ _sflow._udp     30      TXT     (
 ) " >> /etc/bind/zones/db.lab.local
 service bind9 restart
 
-update-rc.d sflow-rt defaults
 #/etc/init.d/sflow-rt restart
 /usr/sbin/a2enmod proxy_html
 # a2enconf /var/www/sflow-rt-cumulus/sflow-rt.conf
