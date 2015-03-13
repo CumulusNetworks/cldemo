@@ -24,7 +24,7 @@ iface bond-leaf1-2
 
 auto bridge
 iface bridge
-    bridge-ports peer bond-leaf1-2
+    bridge-ports peerlink bond-leaf1-2
     bridge-stp on
     bridge-vlan-aware yes
     bridge-vids 1000-1050
