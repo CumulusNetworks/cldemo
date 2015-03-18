@@ -112,9 +112,15 @@ then
     tmux set-option mouse-select-pane on
     tmux set-option mouse-resize-pane on
     tmux set-option mouse-select-window on
+else
+    tmux set-option mouse-mode off
 fi
 
+# turn off mouse-utf8
+tmux set-option mouse-utf8 off
 
+# correctly set terminal type
+tmux set-option default-terminal "screen-256color"
 
 # config the status bar
 tmux set-option -t $SNAME status-bg green
