@@ -6,7 +6,7 @@ if [[ -e /var/www/provision.sh ]] || [[ -h /var/www/provision.sh ]]; then
 fi
 
 # link the new one
-ln -s /var/www/provision-ansible.sh /var/www/provision.sh
+ln -s /var/www/provision-ansible.sh /var/www/example-ztp-scripts/ztp-ansible.sh
 
 # make sure opt 239 is enabled in dhcp
 sed -i /etc/dhcp/dhcpd.pools -e 's/# option cumulus-provision-url/option cumulus-provision-url/'
