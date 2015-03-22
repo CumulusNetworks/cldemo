@@ -22,7 +22,7 @@ iface uplink
 # Bond to server2
 auto esx-server2
 allow-hosts esx-server2
-iface esx-server2-bond
+iface esx-server2
     bond-slaves swp32s0
     bond-mode 802.3ad
     bond-miimon 100
