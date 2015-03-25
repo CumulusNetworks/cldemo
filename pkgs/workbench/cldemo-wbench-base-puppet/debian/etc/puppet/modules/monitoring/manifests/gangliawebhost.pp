@@ -44,11 +44,18 @@ class monitoring::gangliawebhost {
     notify => Service['apache2']
   }
 
-  file { [ '/var/lib/ganglia-web/', '/var/lib/ganglia-web/dwoo/' , '/var/lib/ganglia-web/dwoo/compiled' , '/var/lib/ganglia-web/dwoo/cache', '/var/www/ganglia-web/' ]:
+  file { [ '/var/lib/ganglia-web/', '/var/lib/ganglia-web/dwoo/' , '/var/lib/ganglia-web/dwoo/compiled' , '/var/lib/ganglia-web/dwoo/cache' ]:
     ensure => directory,
     owner  => 'www-data',
     group  => 'www-data',
     mode   => '0755',
+  }
+
+  file { '/var/www/ganglia-web/':
+    ensure  => directory,
+    recurse => true,
+    owner   => 'www-data',
+    group   => 'www-data',
   }
 
   package { 'gmetad' :
