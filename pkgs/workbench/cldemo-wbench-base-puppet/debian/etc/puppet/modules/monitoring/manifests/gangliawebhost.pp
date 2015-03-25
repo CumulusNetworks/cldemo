@@ -63,6 +63,7 @@ class monitoring::gangliawebhost {
     owner  => 'www-data',
     group  => 'www-data',
     mode   => '0755',
+    source => 'puppet:///modules/monitoring/ganglia.conf.php',
   }
 
   package { 'gmetad' :
