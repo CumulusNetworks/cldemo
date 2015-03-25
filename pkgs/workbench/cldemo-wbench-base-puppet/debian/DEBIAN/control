@@ -1,5 +1,5 @@
 Package: cldemo-wbench-base-puppet
-Version: 1.18
+Version: 1.19
 Section: base
 Priority: optional
 Architecture: all

@@ -44,7 +44,7 @@ class monitoring::gangliawebhost {
     notify => Service['apache2']
   }
 
-  file { [ '/var/lib/ganglia-web/', '/var/lib/ganglia-web/dwoo/' , '/var/lib/ganglia-web/dwoo/compiled' , '/var/lib/ganglia-web/dwoo/cache' ]:
+  file { [ '/var/lib/ganglia-web/', '/var/lib/ganglia-web/dwoo/' , '/var/lib/ganglia-web/dwoo/compiled' , '/var/lib/ganglia-web/dwoo/cache', '/var/www/ganglia-web/' ]:
     ensure => directory,
     owner  => 'www-data',
     group  => 'www-data',
