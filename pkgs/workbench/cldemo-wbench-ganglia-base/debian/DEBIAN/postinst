@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+if [ ! -d /var/www/ganglia-web ]
+then
+  mkdir -p /var/www/ganglia-web
+  chown www-data:www-data /var/www/ganglia-web
+fi
+
+/usr/bin/git clone https://github.com/ganglia/ganglia-web.git /var/www/ganglia-web
+
+exit 0
