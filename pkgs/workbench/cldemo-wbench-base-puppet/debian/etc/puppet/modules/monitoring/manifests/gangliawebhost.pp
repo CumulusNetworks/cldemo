@@ -51,6 +51,13 @@ class monitoring::gangliawebhost {
     mode   => '0755',
   }
 
+  file { '/var/lib/ganglia-web/dwoo/compiled':
+    ensure => directory,
+    owner  => 'www-data',
+    group  => 'www-data',
+    mode   => '0777'
+  }
+
   file { '/var/www/ganglia-web/':
     ensure  => directory,
     recurse => true,

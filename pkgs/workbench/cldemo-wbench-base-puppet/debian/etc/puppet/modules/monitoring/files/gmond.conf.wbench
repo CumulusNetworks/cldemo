@@ -17,7 +17,7 @@ globals {
  * NOT be wrapped inside of a <CLUSTER> tag. */ 
 
 cluster {
-  name = "Workbench"
+  name = "Cumulus"
 }
 
 /* Feel free to specify as many udp_send_channels as you like.  Gmond 
