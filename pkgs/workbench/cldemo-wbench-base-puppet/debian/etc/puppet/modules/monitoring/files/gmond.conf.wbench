@@ -24,6 +24,7 @@ cluster {
    used to only support having a single channel */ 
 udp_send_channel { 
   host = 192.168.0.1
+  bind = 192.168.0.1
   ttl = 2 
 } 
 

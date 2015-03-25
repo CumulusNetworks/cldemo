@@ -58,6 +58,13 @@ class monitoring::gangliawebhost {
     group   => 'www-data',
   }
 
+  file { '/var/www/ganglia-web/conf.php':
+    ensure => file,
+    owner  => 'www-data',
+    group  => 'www-data',
+    mode   => '0755',
+  }
+
   package { 'gmetad' :
     ensure => installed
   }

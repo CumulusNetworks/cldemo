@@ -7,5 +7,6 @@ then
 fi
 
 /usr/bin/git clone https://github.com/ganglia/ganglia-web.git /var/www/ganglia-web
+cp /var/www/ganglia-web/conf_default.php.in /var/www/ganglia-web/conf_default.php
 
 exit 0
