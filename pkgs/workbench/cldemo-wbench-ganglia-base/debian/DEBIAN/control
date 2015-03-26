@@ -1,0 +1,10 @@
+Package: cldemo-wbench-ganglia-base
+Version: 0.6-2
+Section: base
+Priority: optional
+Architecture: all
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
+Description: Setup ganglia web frontend 
+  Setup the ganglia web front end to display monitoring examples.
+  Also includes ganglia-webfrontend 3.5.12
+  Was previously cldemo-wbench-ganglia-base-puppet

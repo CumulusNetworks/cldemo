@@ -1,9 +1,9 @@
 Package: cldemo-wbench-ganglia-2lt22s-puppet
-Version: 0.1-2
+Version: 0.1-3
 Section: base
 Priority: optional
 Architecture: all
-Depends: cldemo-wbench-ganglia-base-puppet
+Depends: cldemo-wbench-base-puppet, cldemo-wbench-ospfunnum-base-puppet, cldemo-wbench-ganglia-base
 Breaks: cldemo-wbench-ospfunnum-2lt22s-puppet
 Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: 2 leaf 2 spine; Puppet, OSPF Unnumbered IPv4, and Ganglia

@@ -1,9 +1,9 @@
 Package: cldemo-wbench-ganglia-2s-puppet
-Version: 0.1-5
+Version: 0.2-0
 Section: base
 Priority: optional
 Architecture: all
-Depends: cldemo-wbench-ganglia-base-puppet
+Depends: cldemo-wbench-ganglia-base, cldemo-wbench-base-puppet, cldemo-wbench-ospfunnum-base-puppet
 Breaks: cldemo-wbench-ospfunnum-2s-puppet, cldemo-wbench-ibgp-2s-puppet
 Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: 2 switch; Puppet, OSPF Unnumbered IPv4, and Ganglia
