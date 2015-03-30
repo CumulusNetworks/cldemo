@@ -5,10 +5,7 @@ if [[ -e /var/www/provision.sh ]] || [[ -h /var/www/provision.sh ]]; then
     rm /var/www/provision.sh
 fi
 
-# clone the ztp scripts repository
-/usr/bin/git clone https://github.com/CumulusNetworks/example-ztp-scripts.git /home/cumulus/example-ztp-scripts
-
-# link the new one
+# link the ztp script
 ln -s /home/cumulus/example-ztp-scripts/ztp-ansible.sh /var/www/provision.sh
 
 # make sure opt 239 is enabled in dhcp
