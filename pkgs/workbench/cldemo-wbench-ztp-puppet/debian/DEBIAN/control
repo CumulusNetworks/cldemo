@@ -1,5 +1,5 @@
 Package: cldemo-wbench-ztp-puppet
-Version: 0.4-4
+Version: 0.5
 Section: base
 Priority: optional
 Architecture: all

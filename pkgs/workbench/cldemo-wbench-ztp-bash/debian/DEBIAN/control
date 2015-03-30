@@ -1,8 +1,0 @@
-Package: cldemo-wbench-ztp-bash
-Version: 0.1-1
-Section: base
-Priority: optional
-Architecture: all
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: Zero touch provisioning script for Bash
-    Bootstrap zero touch provisioning script for Bash
