@@ -6,8 +6,11 @@ if [[ -e /var/www/provision.sh ]] || [[ -h /var/www/provision.sh ]]; then
     rm /var/www/provision.sh
 fi
 
+# clone the ztp scripts repository
+/usr/bin/git clone https://github.com/CumulusNetworks/example-ztp-scripts.git /home/cumulus/example-ztp-scripts
+
 # link the new one
-ln -s /var/www/example-ztp-scripts/ztp-chef.sh /var/www/provision.sh
+ln -fs /home/cumulus/example-ztp-scripts/ztp-chef.sh /var/www/provision.sh
 
 # make sure opt 239 is enabled in dhcp
 sed -i /etc/dhcp/dhcpd.pools -e 's/# option cumulus-provision-url/option cumulus-provision-url/'
