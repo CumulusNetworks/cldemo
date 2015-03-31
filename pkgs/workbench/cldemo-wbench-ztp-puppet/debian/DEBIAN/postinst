@@ -2,12 +2,12 @@
 set -e
 
 # remove the script if it exists
-if [ -f /var/www/provision.sh ]; then
+if [[ -e /var/www/provision.sh ]] || [[ -h /var/www/provision.sh ]]; then
     rm /var/www/provision.sh
 fi
 
-# link the new one
-ln -s /var/www/provision-puppet.sh /var/www/provision.sh
+# link the ztp script
+ln -s /home/cumulus/example-ztp-scripts/ztp-puppet.sh /var/www/provision.sh
 
 # make sure opt 239 is enabled in dhcp
 sed -i /etc/dhcp/dhcpd.pools -e 's/# option cumulus-provision-url/option cumulus-provision-url/'

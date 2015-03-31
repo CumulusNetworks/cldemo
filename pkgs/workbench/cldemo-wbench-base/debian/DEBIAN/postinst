@@ -19,6 +19,11 @@ cat /var/www/authorized_keys >> /home/cumulus/.ssh/authorized_keys
 ln -fs /usr/local/cumulus/bin/cw-mux /usr/local/bin/cw-mux
 ln -fs /usr/local/cumulus/bin/cw-mux-helper /usr/local/bin/cw-mux-helper
 
+# clone the example-ztp-scripts
+if [ ! -d "/home/cumulus/example-ztp-scripts" ]; then
+    git clone https://github.com/CumulusNetworks/example-ztp-scripts.git /home/cumulus/example-ztp-scripts
+fi
+
 chown -R cumulus:cumulus /home/cumulus/
 
 exit 0
