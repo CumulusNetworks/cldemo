@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+git clone https://github.com/CumulusNetworks/example-ospfunnum-puppet.git /home/cumulus/example-ospfunnum-puppet
+
+# sym link /etc/puppet/manifests to /home/cumulus/example-ospfunnum-puppet/manifests
+
+# run librarian on Puppetfile
+
+# copy topology.dot for ptmd to proper directory
+#if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
+#    cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+#fi
+
+exit 0
