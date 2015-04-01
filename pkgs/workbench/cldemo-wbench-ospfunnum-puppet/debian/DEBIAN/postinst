@@ -4,11 +4,14 @@ set -e
 
 git clone https://github.com/CumulusNetworks/example-ospfunnum-puppet.git /home/cumulus/example-ospfunnum-puppet
 
-# sym link /etc/puppet/manifests to /home/cumulus/example-ospfunnum-puppet/manifests
 # sym link /etc/puppet/files to /home/cumulus/example-ospfunnum-puppet/files
+# sym link /etc/puppet/manifests to /home/cumulus/example-ospfunnum-puppet/manifests
+# sym link /etc/puppet/modules to /home/cumulus/example-ospfunnum-puppet/modules
+# sym link /etc/puppet/templates to /home/cumulus/example-ospfunnum-puppet/templates
 
+# http://librarian-puppet.com/
 # run librarian on Puppetfile
-
+# gem install librarian-puppet
 
 # copy topology.dot for ptmd to proper directory
 #if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
