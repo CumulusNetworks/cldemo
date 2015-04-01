@@ -1,21 +1,48 @@
 #!/bin/bash
 
+
 set -e
 
-git clone https://github.com/CumulusNetworks/example-ospfunnum-puppet.git /home/cumulus/example-ospfunnum-puppet
+# check if cumulus user exists
+getent passwd 'cumulus' > /dev/null 2>&1 && ret=true
 
-# sym link /etc/puppet/files to /home/cumulus/example-ospfunnum-puppet/files
-# sym link /etc/puppet/manifests to /home/cumulus/example-ospfunnum-puppet/manifests
-# sym link /etc/puppet/modules to /home/cumulus/example-ospfunnum-puppet/modules
-# sym link /etc/puppet/templates to /home/cumulus/example-ospfunnum-puppet/templates
+if $ret; then
+  echo "Found cumulus user. Continue with install"
+else
+  echo "Cumulus user not found. Check if user 'cumulus' exists"
+  exit 1
+fi
 
-# http://librarian-puppet.com/
-# run librarian on Puppetfile
-# gem install librarian-puppet
 
-# copy topology.dot for ptmd to proper directory
-#if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
-#    cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
-#fi
+example_ospf_dir='/home/cumulus/example-ospfunnum-puppet'
 
-exit 0
+echo "Git clone example-ospfunnum-puppet"
+git clone https://github.com/CumulusNetworks/example-ospfunnum-puppet.git $example_ospf_dir
+
+
+echo "Cd into /home/cumulus/example-ospfunnum-puppet"
+cd $example_ospf_dir
+mkdir templates
+
+echo "execute librarian to install puppet modules"
+librarian-puppet install
+
+echo "symlink puppet files from ospfunnum-puppet dir to /etc/puppet"
+dirlocs=(files manifests modules templates)
+
+echo "remove puppet files in /etc/ that will be overriding"
+for i in "${dirlocs[@]}"
+do
+  rm -rf /etc/puppet/$i
+done
+
+
+for i in "${dirlocs[@]}"
+do
+  ln -s  $example_ospf_dir/$i /etc/puppet/$i
+done
+
+echo "change ownership of example-ospfunnum-puppet to cumulus"
+chown -R cumulus:cumulus $example_ospf_dir
+
+
