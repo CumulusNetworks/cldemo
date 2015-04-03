@@ -20,7 +20,7 @@ echo "Git clone example-ospfunnum-puppet"
 git clone https://github.com/CumulusNetworks/example-ospfunnum-puppet.git $example_ospf_dir
 
 echo "install puppet librarian"
-gem install librarian-puppet -no-ri no-rdoc
+gem install librarian-puppet --no-ri --no-rdoc
 
 
 echo "Cd into /home/cumulus/example-ospfunnum-puppet"
