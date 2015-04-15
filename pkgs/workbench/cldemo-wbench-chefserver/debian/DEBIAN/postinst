@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+chef-server-ctl reconfigure
+
+# On the wbench, Apache listens on 80, switch Chef to a different port
+sed -i /var/opt/chef-server/nginx/etc/nginx.conf -e 's!listen 80!listen 8080!'
+sleep 5
+
+# Set up cumulus user. Use wrapper script because knife prompts for a password
+/usr/local/sbin/knife_configure.expect
+
+exit 0
