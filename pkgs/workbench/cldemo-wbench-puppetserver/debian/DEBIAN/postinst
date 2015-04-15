@@ -31,9 +31,6 @@ else
     service bind9 restart
 fi
 
-# copy license files to proper directory
-cp -f /var/www/*.lic /etc/puppet/modules/base/files/
-
 # all ready
 service puppetmaster restart
 

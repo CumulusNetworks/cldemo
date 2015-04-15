@@ -47,5 +47,8 @@ ln -s /etc/puppet/manifests/site-${WBENCHCLASS}.pp /etc/puppet/manifests/site.pp
 echo "copy topology.dot for ptmd"
 cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
 
+echo "copy license files"
+cp -f /var/www/*.lic /etc/puppet/modules/base/files/
+
 echo "change ownership of example-ospfunnum-puppet to cumulus"
 chown -R cumulus:cumulus $example_ospf_dir
