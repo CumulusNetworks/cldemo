@@ -46,8 +46,8 @@ done
 knife data bag from file users data_bags/users
 knife data bag from file interfaces data_bags/interfaces/$WBENCHCLASS
 
-for cookbook in ohai sysctl cldemo_base cldemo_ospf_unnumbered;do
-  knife cookbook upload -o cookbooks $cookbook
+for cookbooks in cookbooks site-cookbooks;do
+  knife cookbook upload -o $cookbooks --all
 done
 
 knife role from file roles/switch.json
