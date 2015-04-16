@@ -43,8 +43,8 @@ done
 for databag in users interfaces;do
   knife data bag create $databag
 done
-knife data bag from file users databags/users
-knife data bag from file interfaces databags/interfaces/$WBENCHCLASS
+knife data bag from file users data_bags/users
+knife data bag from file interfaces data_bags/interfaces/$WBENCHCLASS
 
 for cookbook in sysctl cldemo_base cldemo_ospf_unnumbered;do
   knife cookbook upload -o cookbooks $cookbook
