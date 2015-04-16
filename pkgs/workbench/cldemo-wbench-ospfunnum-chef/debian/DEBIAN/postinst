@@ -14,7 +14,7 @@ fi
 example_ospf_dir='/home/cumulus/example-ospfunnum-chef'
 
 echo "Git clone example-ospfunnum-chef"
-echo git clone https://github.com/CumulusNetworks/example-ospfunnum-chef.git $example_ospf_dir
+git clone https://github.com/CumulusNetworks/example-ospfunnum-chef.git $example_ospf_dir
 
 echo "Cd into /home/cumulus/example-ospfunnum-chef"
 cd $example_ospf_dir
