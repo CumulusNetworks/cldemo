@@ -22,3 +22,6 @@
 [submodule "pkgs/workbench/cldemo-wbench-base-puppet/debian/etc/puppet/modules/sysctl"]
 	path = pkgs/workbench/cldemo-wbench-base-puppet/debian/etc/puppet/modules/sysctl
 	url = https://github.com/duritong/puppet-sysctl.git
+[submodule "pkgs/workbench/cldemo-wbench-base-chef/debian/usr/local/share/chef/cookbooks/sysctl"]
+	path = pkgs/workbench/cldemo-wbench-base-chef/debian/usr/local/share/chef/cookbooks/sysctl
+	url = https://github.com/rcbops-cookbooks/sysctl.git
