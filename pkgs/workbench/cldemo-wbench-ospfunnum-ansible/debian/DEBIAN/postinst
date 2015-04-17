@@ -1,0 +1,40 @@
+#!/bin/bash
+set -e
+
+# check if cumulus user exists
+getent passwd 'cumulus' > /dev/null 2>&1 && ret=true
+
+if $ret; then
+  echo "Found cumulus user. Continue with install"
+else
+  echo "Cumulus user not found. Check if user 'cumulus' exists"
+  exit 1
+fi
+
+example_ospf_dir='/home/cumulus/example-ospfunnum-ansible'
+
+echo "Git clone example-ospfunnum-ansible"
+git clone https://github.com/CumulusNetworks/example-ospfunnum-ansible.git $example_ospf_dir
+
+echo "Cd into /home/cumulus/example-ospfunnum-ansible"
+cd $example_ospf_dir
+
+echo "install ansible librarian"
+bundle install
+
+echo "execute librarian to install ansible modules"
+librarian-ansible install
+
+echo "symlink site-ospfunnum.yml & hosts to topology specific version"
+WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class' /var/www/wbench.json`
+ln -s $example_ospf_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ospf_dir/site-ospfunnum.yml
+ln -s $example_ospf_dir/hosts-${WBENCHCLASS} $example_ospf_dir/hosts
+
+echo "copy topology.dot for ptmd"
+cp -f /var/www/topology.dot $example_ospf_dir/roles/common/files
+
+echo "copy license files"
+cp -f /var/www/*.lic $example_ospf_dir/roles/common/files
+
+echo "change ownership of example-ospfunnum-ansible to cumulus"
+chown -R cumulus:cumulus $example_ospf_dir
