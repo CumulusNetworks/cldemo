@@ -25,9 +25,10 @@ bundle install
 echo "execute librarian to install ansible modules"
 librarian-ansible install
 
-echo "symlink site-ospfunnum.yml to topology specific version"
+echo "symlink site-ospfunnum.yml & hosts to topology specific version"
 WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class' /var/www/wbench.json`
-ln -s $example_ospf_dir/site-ospfunnum-${WBENCHCLAS}.yml $example_ospf_dir/site-ospfunnum.yml
+ln -s $example_ospf_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ospf_dir/site-ospfunnum.yml
+ln -s $example_ospf_dir/hosts-${WBENCHCLASS} $example_ospf_dir/hosts
 
 echo "copy topology.dot for ptmd"
 cp -f /var/www/topology.dot $example_ospf_dir/roles/common/files
