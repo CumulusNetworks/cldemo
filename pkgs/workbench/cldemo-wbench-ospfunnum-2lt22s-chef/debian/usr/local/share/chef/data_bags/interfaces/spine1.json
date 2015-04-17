@@ -1,6 +1,0 @@
-{
-	"id": "spine1",
-	"loopback": { "address": "10.2.1.3" },
-	"unnumbered": [ "swp49", "swp50", "swp51", "swp52" ],
-	"bridges": []
-}

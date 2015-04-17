@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# copy topology.dot for ptmd to proper directory
-cp -f /var/www/topology.dot /home/cumulus/ansibledemos/roles/common/files
-
-# set /home/cumulus files to use cumulus:cumulus ownership
-chown -R cumulus:cumulus /home/cumulus
-
-exit 0

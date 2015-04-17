@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-knife cookbook upload cldemo_ospf_unnumbered
-
-exit 0
-
