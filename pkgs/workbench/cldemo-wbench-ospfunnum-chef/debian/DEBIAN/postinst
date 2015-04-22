@@ -26,7 +26,7 @@ echo "execute librarian to install Chef cookbooks"
 librarian-chef install
 
 echo "upload nodes, data bags, cookbooks and roles"
-WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class' /var/www/wbench.json`
+WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
 
 for node in nodes/$WBENCHCLASS/*.json;do
   knife node from file $node

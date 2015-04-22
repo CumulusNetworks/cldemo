@@ -41,7 +41,7 @@ do
 done
 
 echo "symlink site.pp to topology specific version"
-WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class' /var/www/wbench.json`
+WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
 ln -s /etc/puppet/manifests/site-${WBENCHCLASS}.pp /etc/puppet/manifests/site.pp
 
 echo "copy topology.dot for ptmd"
