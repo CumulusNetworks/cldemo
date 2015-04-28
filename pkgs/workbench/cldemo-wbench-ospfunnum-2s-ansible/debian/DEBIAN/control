@@ -1,9 +1,0 @@
-Package: cldemo-wbench-ospfunnum-2s-ansible
-Version: 0.3-1
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-ospfunnum-base-ansible
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: 2 switch; Ansible, PTM and OSPF Unnumbered IPv4
-  2 switch lab, managed by Ansible, OSPF Unnumbered IPv4 and PTM

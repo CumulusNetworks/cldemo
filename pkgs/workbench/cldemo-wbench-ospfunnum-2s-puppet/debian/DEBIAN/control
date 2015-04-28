@@ -1,9 +1,0 @@
-Package: cldemo-wbench-ospfunnum-2s-puppet
-Version: 0.4-2
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-ospfunnum-base-puppet
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: 2 switch; Puppet, PTM and OSPF Unnumbered IPv4
-  2 switch lab, managed by Puppet, OSPF Unnumbered IPv4 and PTM

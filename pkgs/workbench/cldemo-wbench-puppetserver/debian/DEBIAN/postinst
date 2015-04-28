@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -e
+
+# turn on autosigning
+if [ ! -f /etc/puppet/autosign.conf ]; then
+    echo "Enabling certificating autosigning"
+    echo "*.lab.local">>/etc/puppet/autosign.conf
+fi
+
+# fileserver folder
+if [ ! -d /etc/puppet/files ]; then
+    mkdir /etc/puppet/files
+fi
+
+# allow fileserver access
+sed -i /etc/puppet/fileserver.conf -e 's/# \[extra_files\]/\[files\]/'
+sed -i /etc/puppet/fileserver.conf -e 's/#   path \/etc\/puppet\/files/path \/etc\/puppet\/files/'
+sed -i /etc/puppet/fileserver.conf -e 's/#   allow \*/allow \*/'
+
+# comment out templatedir
+sed -i /etc/puppet/puppet.conf -e 's/^template/# template/'
+
+# cname for puppet.lab.local
+if grep -q "puppet" /etc/bind/zones/db.lab.local
+then
+    echo "puppet CNAME already present"
+else
+    echo "adding puppet CNAME"
+    echo "puppet          IN      CNAME   wbench" >> /etc/bind/zones/db.lab.local
+    service bind9 restart
+fi
+
+# all ready
+service puppetmaster restart
+
+# local puppet agent on the wbench itself
+sed -i /etc/default/puppet -e 's/START=no/START=yes/'
+service puppet restart
+
+exit 0

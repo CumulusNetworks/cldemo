@@ -1,9 +1,0 @@
-Package: cldemo-wbench-ospfunnum-2lt22s-puppet
-Version: 0.1
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-ospfunnum-base-puppet
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: Trident2 2 leaf 2 spine; Puppet, PTM and OSPF Unnumbered IPv4
-  4 switch lab, managed by Puppet, OSPF Unnumbered IPv4 and PTM

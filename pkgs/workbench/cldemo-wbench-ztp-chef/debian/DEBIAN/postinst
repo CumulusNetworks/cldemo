@@ -13,15 +13,4 @@ ln -fs /home/cumulus/example-ztp-scripts/ztp-chef.sh /var/www/provision.sh
 sed -i /etc/dhcp/dhcpd.pools -e 's/# option cumulus-provision-url/option cumulus-provision-url/'
 service isc-dhcp-server restart
 
-if [[ -f /etc/chef-server/chef-validator.pem ]]; then
-  cp /etc/chef-server/chef-validator.pem /var/www/chef-validator.pem
-  chmod 644 /var/www/chef-validator.pem
-else
-  echo "Couldn't find /etc/chef/chef-validator.pem" >&2
-fi
-
-if [[ ! -f /etc/chef/validator.pem ]]; then
-  cp /etc/chef-server/chef-validator.pem /etc/chef/validation.pem
-fi
-
 exit 0

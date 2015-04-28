@@ -1,0 +1,9 @@
+Package: cldemo-wbench-puppetserver
+Version: 1.0
+Section: base
+Priority: optional
+Architecture: all
+Depends: puppetmaster, cldemo-wbench-base, cldemo-wbench-ztp-puppet, puppet
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
+Description: Puppetmaster basic configuration
+  Setup the puppetmaster, fileserver, autosigning etc
