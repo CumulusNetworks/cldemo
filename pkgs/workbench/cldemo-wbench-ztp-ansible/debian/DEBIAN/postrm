@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ -h /var/www/provision.sh ]; then
+  rm /var/www/provision.sh
+fi
+
+exit 0
