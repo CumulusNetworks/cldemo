@@ -18,9 +18,7 @@ pushd /usr/local/share/chef
 
 	# Load Data Bags
 	pushd data_bags
-		knife data bag create users
 		knife data bag create interfaces
-		knife data bag from file users users
 	popd
 
 popd
