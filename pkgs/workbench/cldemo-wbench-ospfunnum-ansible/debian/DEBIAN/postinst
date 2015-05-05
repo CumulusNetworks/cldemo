@@ -27,7 +27,7 @@ bundle install
 echo "execute librarian to install ansible modules"
 librarian-ansible install
 
-if [ ! -h $example_ospf_dir/site-ospfunnum.yml && ! -h $example_ospf_dir/hosts]; then
+if [ ! -h $example_ospf_dir/site-ospfunnum.yml && ! -h $example_ospf_dir/hosts ]; then
   echo "symlink site-ospfunnum.yml & hosts to topology specific version"
   WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
   ln -s $example_ospf_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ospf_dir/site-ospfunnum.yml
