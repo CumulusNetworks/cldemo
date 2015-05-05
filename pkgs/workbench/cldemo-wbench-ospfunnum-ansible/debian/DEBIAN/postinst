@@ -13,8 +13,10 @@ fi
 
 example_ospf_dir='/home/cumulus/example-ospfunnum-ansible'
 
-echo "Git clone example-ospfunnum-ansible"
-git clone https://github.com/CumulusNetworks/example-ospfunnum-ansible.git $example_ospf_dir
+if [ ! -d $example_ospf_dir ]; then
+  echo "Git clone example-ospfunnum-ansible"
+  git clone https://github.com/CumulusNetworks/example-ospfunnum-ansible.git $example_ospf_dir
+fi
 
 echo "Cd into /home/cumulus/example-ospfunnum-ansible"
 cd $example_ospf_dir
@@ -25,10 +27,12 @@ bundle install
 echo "execute librarian to install ansible modules"
 librarian-ansible install
 
-echo "symlink site-ospfunnum.yml & hosts to topology specific version"
-WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
-ln -s $example_ospf_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ospf_dir/site-ospfunnum.yml
-ln -s $example_ospf_dir/hosts-${WBENCHCLASS} $example_ospf_dir/hosts
+if [ ! -h $example_ospf_dir/site-ospfunnum.yml ] && [ ! -h $example_ospf_dir/hosts ]; then
+  echo "symlink site-ospfunnum.yml & hosts to topology specific version"
+  WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
+  ln -s $example_ospf_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ospf_dir/site-ospfunnum.yml
+  ln -s $example_ospf_dir/hosts-${WBENCHCLASS} $example_ospf_dir/hosts
+fi
 
 echo "copy topology.dot for ptmd"
 cp -f /var/www/topology.dot $example_ospf_dir/roles/common/files

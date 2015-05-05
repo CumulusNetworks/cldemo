@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+example_ospf_dir='/home/cumulus/example-ospfunnum-ansible'
+
+if [ -d $example_ospf_dir ]; then
+  rm -rf $example_ospf_dir
+fi
+
+exit 0
