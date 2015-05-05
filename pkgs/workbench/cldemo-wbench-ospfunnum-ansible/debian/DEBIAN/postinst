@@ -13,8 +13,10 @@ fi
 
 example_ospf_dir='/home/cumulus/example-ospfunnum-ansible'
 
-echo "Git clone example-ospfunnum-ansible"
-git clone https://github.com/CumulusNetworks/example-ospfunnum-ansible.git $example_ospf_dir
+if [ ! -d $example_ospf_dir ]; then
+  echo "Git clone example-ospfunnum-ansible"
+  git clone https://github.com/CumulusNetworks/example-ospfunnum-ansible.git $example_ospf_dir
+fi
 
 echo "Cd into /home/cumulus/example-ospfunnum-ansible"
 cd $example_ospf_dir
