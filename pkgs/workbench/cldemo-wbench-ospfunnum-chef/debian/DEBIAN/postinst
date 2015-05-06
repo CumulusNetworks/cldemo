@@ -34,10 +34,9 @@ for node in nodes/$WBENCHCLASS/*.json;do
   knife node from file $node
 done
 
-for databag in users interfaces;do
+for databag in interfaces;do
   knife data bag create $databag
 done
-knife data bag from file users data_bags/users
 knife data bag from file interfaces data_bags/interfaces/$WBENCHCLASS
 
 for cookbooks in cookbooks site-cookbooks;do
