@@ -1,9 +1,0 @@
-Package: cldemo-wbench-vxlanptp-2lt22s-puppet
-Version: 0.1-1
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-ospfunnum-base-puppet, cldemo-wbench-osinstaller-ubuntuserver-precise
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: VXLAN PtP between 2 T2 leaf switches.
-  4 switch lab, managed by Puppet, OSPF Unnumbered IPv4 and PTM
