@@ -11,6 +11,3 @@
   copy: src=topology.dot dest=/etc/ptm.d/topology.dot
   notify:
     - restart ptmd
-
-- name: disable arp filter
-  sysctl: name=net.ipv4.conf.all.arp_filter value=0 state=present reload=yes
