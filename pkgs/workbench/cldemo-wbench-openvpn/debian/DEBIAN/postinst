@@ -117,7 +117,7 @@ server 172.16.24.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
 push \"route 192.168.0.0 255.255.255.0\"
 push \"dhcp-option DNS 192.168.0.1\"
-push \"dhcp-opion DOMAIN lab.local\"
+push \"dhcp-option DOMAIN lab.local\"
 keepalive 10 120
 " > $CONFDIR/server.conf
 
