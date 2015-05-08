@@ -39,15 +39,15 @@ done
 echo "create symlinks into ${example_ospf_dir}"
 for i in "${dirlocs[@]}"
 do
-  ln -s  $example_ospf_dir/$i /etc/puppet/$i
+  ln -sf $example_ospf_dir/$i /etc/puppet/$i
 done
 
 echo "symlink site.pp to topology specific version"
 WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
-ln -s /etc/puppet/manifests/site-${WBENCHCLASS}.pp /etc/puppet/manifests/site.pp
+ln -sf /etc/puppet/manifests/site-${WBENCHCLASS}.pp /etc/puppet/manifests/site.pp
 
 echo "copy topology.dot for ptmd"
-cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+cp -f /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
 
 echo "copy license files"
 cp -f /var/www/*.lic /etc/puppet/modules/base/files/
