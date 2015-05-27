@@ -1,0 +1,44 @@
+#!/bin/bash
+set -e
+
+# check if cumulus user exists
+getent passwd 'cumulus' > /dev/null 2>&1 && ret=true
+
+if $ret; then
+  echo "Found cumulus user. Continue with install"
+else
+  echo "Cumulus user not found. Check if user 'cumulus' exists"
+  exit 1
+fi
+
+example_ibgp_dir='/home/cumulus/example-ibgp-ansible'
+
+if [ ! -d $example_ibgp_dir ]; then
+  echo "Git clone example-ibgp-ansible"
+  git clone https://github.com/CumulusNetworks/example-ibgp-ansible.git $example_ibgp_dir
+fi
+
+echo "Cd into /home/cumulus/example-ibgp-ansible"
+cd $example_ibgp_dir
+
+echo "install ansible librarian"
+bundle install
+
+echo "execute librarian to install ansible modules"
+librarian-ansible install
+
+if [ ! -h $example_ibgp_dir/site-ospfunnum.yml ] && [ ! -h $example_ospf_dir/hosts ]; then
+  echo "symlink site-ospfunnum.yml & hosts to topology specific version"
+  WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
+  ln -s $example_ibgp_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ospf_dir/site-ospfunnum.yml
+  ln -s $example_ibgp_dir/hosts-${WBENCHCLASS} $example_ospf_dir/hosts
+fi
+
+echo "copy topology.dot for ptmd"
+cp -f /var/www/topology.dot $example_ibgp_dir/roles/common/files
+
+echo "copy license files"
+cp -f /var/www/*.lic $example_ibgp_dir/roles/common/files
+
+echo "change ownership of example-ospfunnum-ansible to cumulus"
+chown -R cumulus:cumulus $example_ibgp_dir

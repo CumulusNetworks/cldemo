@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# set /home/cumulus files to use cumulus:cumulus ownership
-chown -R cumulus:cumulus /home/cumulus
-
-exit 0
