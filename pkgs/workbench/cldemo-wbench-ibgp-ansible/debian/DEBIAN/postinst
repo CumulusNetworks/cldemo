@@ -27,10 +27,10 @@ bundle install
 echo "execute librarian to install ansible modules"
 librarian-ansible install
 
-if [ ! -h $example_ibgp_dir/site-ospfunnum.yml ] && [ ! -h $example_ospf_dir/hosts ]; then
-  echo "symlink site-ospfunnum.yml & hosts to topology specific version"
+if [ ! -h $example_ibgp_dir/site-ibgp.yml ] && [ ! -h $example_ibgp_dir/hosts ]; then
+  echo "symlink site-ibgp.yml & hosts to topology specific version"
   WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
-  ln -s $example_ibgp_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ibgp_dir/site-ospfunnum.yml
+  ln -s $example_ibgp_dir/site-ibgp-${WBENCHCLASS}.yml $example_ibgp_dir/site-ibgp.yml
   ln -s $example_ibgp_dir/hosts-${WBENCHCLASS} $example_ibgp_dir/hosts
 fi
 
@@ -40,5 +40,5 @@ cp -f /var/www/topology.dot $example_ibgp_dir/roles/common/files
 echo "copy license files"
 cp -f /var/www/*.lic $example_ibgp_dir/roles/common/files
 
-echo "change ownership of example-ospfunnum-ansible to cumulus"
+echo "change ownership of example-ibgp-ansible to cumulus"
 chown -R cumulus:cumulus $example_ibgp_dir
