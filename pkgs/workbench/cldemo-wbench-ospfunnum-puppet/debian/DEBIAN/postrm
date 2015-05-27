@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+example_ibgp_dir='/home/cumulus/example-ospfunnum-puppet'
+
+if [ -d $example_ibgp_dir ]; then
+  rm -rf $example_ibgp_dir
+fi
+
+exit 0
