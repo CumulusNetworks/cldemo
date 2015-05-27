@@ -30,8 +30,8 @@ librarian-ansible install
 if [ ! -h $example_ibgp_dir/site-ospfunnum.yml ] && [ ! -h $example_ospf_dir/hosts ]; then
   echo "symlink site-ospfunnum.yml & hosts to topology specific version"
   WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
-  ln -s $example_ibgp_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ospf_dir/site-ospfunnum.yml
-  ln -s $example_ibgp_dir/hosts-${WBENCHCLASS} $example_ospf_dir/hosts
+  ln -s $example_ibgp_dir/site-ospfunnum-${WBENCHCLASS}.yml $example_ibgp_dir/site-ospfunnum.yml
+  ln -s $example_ibgp_dir/hosts-${WBENCHCLASS} $example_ibgp_dir/hosts
 fi
 
 echo "copy topology.dot for ptmd"
