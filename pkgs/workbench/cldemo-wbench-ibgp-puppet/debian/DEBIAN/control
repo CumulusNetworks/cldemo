@@ -1,0 +1,9 @@
+Package: cldemo-wbench-ibgp-puppet
+Version: 0.1-1
+Section: base
+Priority: optional
+Architecture: all
+Depends: cldemo-wbench-puppetserver, ruby2.1-dev, ruby-switch
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
+Description: Puppet, PTM and iBGP IPv4
+  2 or 4 switch lab, managed by Puppet, iBGP IPv4 and PTM

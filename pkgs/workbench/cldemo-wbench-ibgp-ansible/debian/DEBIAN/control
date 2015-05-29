@@ -1,0 +1,9 @@
+Package: cldemo-wbench-ibgp-ansible
+Version: 0.1-1
+Section: base
+Priority: optional
+Architecture: all
+Depends: ansible, cldemo-wbench-base, cldemo-wbench-ztp-ansible, ruby2.1-dev, ruby-switch
+Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
+Description: Ansible, PTM and iBGP IPv4
+  2 or 4 switch lab, managed by Ansible, iBGP IPv4 and PTM
