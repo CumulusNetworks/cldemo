@@ -1,5 +1,6 @@
 #!/bin/bash
-set -e
+set -x
+#set -e
 
 # check if cumulus user exists
 getent passwd 'cumulus' > /dev/null 2>&1 && ret=true
@@ -47,7 +48,14 @@ WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
 ln -sf /etc/puppet/manifests/site-${WBENCHCLASS}.pp /etc/puppet/manifests/site.pp
 
 echo "copy topology.dot for ptmd"
-cp -f /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+echo $WBENCHCLASS
+if [ $WBENCHCLASS == "2lt22s" ]
+  echo "2lt22s type copy"
+  cp -f /var/www/topology-clos-2lt22s.dot /etc/puppet/modules/base/files/topology.dot
+else
+  echo "other wbenchtype"
+  cp -f /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+fi
 
 echo "copy license files"
 cp -f /var/www/*.lic /etc/puppet/modules/base/files/
