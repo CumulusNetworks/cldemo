@@ -49,7 +49,7 @@ ln -sf /etc/puppet/manifests/site-${WBENCHCLASS}.pp /etc/puppet/manifests/site.p
 
 echo "copy topology.dot for ptmd"
 echo $WBENCHCLASS
-if [ $WBENCHCLASS == "2lt22s" ]
+if [ $WBENCHCLASS == "2lt22s" ]; then
   echo "2lt22s type copy"
   cp -f /var/www/topology-clos-2lt22s.dot /etc/puppet/modules/base/files/topology.dot
 else
