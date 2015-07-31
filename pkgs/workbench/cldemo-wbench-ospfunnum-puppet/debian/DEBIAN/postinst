@@ -47,10 +47,17 @@ WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
 ln -sf /etc/puppet/manifests/site-${WBENCHCLASS}.pp /etc/puppet/manifests/site.pp
 
 echo "copy topology.dot for ptmd"
-cp -f /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+if [ $WBENCHCLASS == "2lt22s" ]; then
+  cp -f /var/www/topology-clos-2lt22s.dot /etc/puppet/modules/base/files/topology.dot
+else
+  cp -f /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
+fi
 
 echo "copy license files"
 cp -f /var/www/*.lic /etc/puppet/modules/base/files/
 
 echo "change ownership of example-ospfunnum-puppet to cumulus"
 chown -R cumulus:cumulus $example_ospf_dir
+
+echo "puppet plugin sync"
+/usr/bin/puppet plugin download

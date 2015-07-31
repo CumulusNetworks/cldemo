@@ -1,5 +1,5 @@
 Package: cldemo-wbench-ospfunnum-puppet
-Version: 0.1-2
+Version: 0.1-4
 Section: base
 Priority: optional
 Architecture: all
