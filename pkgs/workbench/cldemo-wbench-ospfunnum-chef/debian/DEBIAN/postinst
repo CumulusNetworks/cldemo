@@ -30,6 +30,8 @@ librarian-chef install
 echo "upload nodes, data bags, cookbooks and roles"
 WBENCHCLASS=`jq -r '.[] | .workbench.wbench_class_base' /var/www/wbench.json`
 
+knife ssl fetch
+
 for node in nodes/$WBENCHCLASS/*.json;do
   knife node from file $node
 done
