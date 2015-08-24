@@ -1,9 +1,9 @@
 Package: cldemo-wbench-chefserver
-Version: 1.1
+Version: 1.2
 Section: base
 Priority: optional
 Architecture: all
-Depends: chef-server, cldemo-wbench-base, expect, cldemo-wbench-ztp-chef, chef
+Depends: chef-server-core, cldemo-wbench-base, expect, cldemo-wbench-ztp-chef, chef
 Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Chef Server basic configuration
   Setup the Chef server, add a user
