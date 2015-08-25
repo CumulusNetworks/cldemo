@@ -19,8 +19,8 @@ if [[ ! -f /etc/chef/validation.pem ]]; then
 fi
 
 # On the wbench, Apache listens on 80, switch Chef to a different port
-sed -i /var/opt/opscode/nginx/etc/nginx.conf -e 's!listen 80!listen 81!'
-sleep 5
+# sed -i /var/opt/opscode/nginx/etc/nginx.conf -e 's!listen 80!listen 81!'
+# sleep 5
 
 # Trust the Chef server
 if [[ ! -d /home/cumulus/.chef/trusted_certs ]]; then
