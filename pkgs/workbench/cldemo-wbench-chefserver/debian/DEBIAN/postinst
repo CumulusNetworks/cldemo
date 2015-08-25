@@ -1,15 +1,21 @@
 #!/usr/bin/env bash
+set -x
+
 chef-server-ctl reconfigure
 
-if [[ -f /etc/opscode/chef-validator.pem ]]; then
-  cp /etc/opscode/chef-validator.pem /var/www/chef-validator.pem
+# Set up cumulus user.
+chef-server-ctl user-create cumulus Rocket Turtle cumulus@cumulusnetworks.com CumulusLinux! --filename /home/cumulus/.chef/cumulus.pem
+chef-server-ctl org-create cumulus "Cumulus Networks" --association_user cumulus --filename /etc/opscode/cumulus-validator.pem
+
+if [[ -f /etc/opscode/cumulus-validator.pem ]]; then
+  cp /etc/opscode/cumulus-validator.pem /var/www/chef-validator.pem
   chmod 644 /var/www/chef-validator.pem
 else
-  echo "Couldn't find /etc/chef/chef-validator.pem" >&2
+  echo "Couldn't find /etc/opscode/cumulus-validator.pem" >&2
 fi
 
-if [[ ! -f /etc/chef/validator.pem ]]; then
-  cp /etc/opscode/chef-validator.pem /etc/chef/validation.pem
+if [[ ! -f /etc/chef/validation.pem ]]; then
+  cp /etc/opscode/cumulus-validator.pem /etc/chef/validation.pem
 fi
 
 # On the wbench, Apache listens on 80, switch Chef to a different port
@@ -22,7 +28,5 @@ if [[ ! -d /home/cumulus/.chef/trusted_certs ]]; then
 fi
 cp /var/opt/opscode/nginx/ca/wbench.lab.local.crt /home/cumulus/.chef/trusted_certs/
 
-# Set up cumulus user. Use wrapper script because knife prompts for a password
-/usr/local/sbin/knife_configure.expect
 
 exit 0
