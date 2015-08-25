@@ -13,14 +13,14 @@ if [[ ! -f /etc/chef/validator.pem ]]; then
 fi
 
 # On the wbench, Apache listens on 80, switch Chef to a different port
-sed -i /var/opt/chef-server/nginx/etc/nginx.conf -e 's!listen 80!listen 8080!'
+sed -i /var/opt/opscode/nginx/etc/nginx.conf -e 's!listen 80!listen 81!'
 sleep 5
 
 # Trust the Chef server
 if [[ ! -d /home/cumulus/.chef/trusted_certs ]]; then
   mkdir -p /home/cumulus/.chef/trusted_certs
 fi
-cp /var/opt/chef-server/nginx/ca/wbench.lab.local.crt /home/cumulus/.chef/trusted_certs/
+cp /var/opt/opscode/nginx/ca/wbench.lab.local.crt /home/cumulus/.chef/trusted_certs/
 
 # Set up cumulus user. Use wrapper script because knife prompts for a password
 /usr/local/sbin/knife_configure.expect
