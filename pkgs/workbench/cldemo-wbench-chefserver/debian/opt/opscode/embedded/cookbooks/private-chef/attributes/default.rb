@@ -37,7 +37,7 @@ default['private_chef']['role'] = "standalone"
 default['private_chef']['license']['nodes'] = 25
 default['private_chef']['license']['upgrade_url'] = "http://www.getchef.com/contact/on-premises-simple"
 
-default['private_chef']['default_orgname'] = cumulus
+default['private_chef']['default_orgname'] = "cumulus"
 
 ###
 # Options for installing addons
