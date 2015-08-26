@@ -49,3 +49,5 @@ knife role from file roles/switch.json
 
 echo "change ownership of example-ospfunnum-chef to cumulus"
 chown -R cumulus:cumulus $example_ospf_dir
+
+exit 0
