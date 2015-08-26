@@ -3,10 +3,6 @@ set -x
 
 chef-server-ctl reconfigure
 
-# Set up cumulus user.
-chef-server-ctl user-create cumulus Rocket Turtle cumulus@cumulusnetworks.com CumulusLinux! --filename /home/cumulus/.chef/cumulus.pem
-chef-server-ctl org-create cumulus "Cumulus Networks" --association_user cumulus --filename /etc/opscode/cumulus-validator.pem
-
 if [[ -f /etc/opscode/cumulus-validator.pem ]]; then
   cp /etc/opscode/cumulus-validator.pem /var/www/chef-validator.pem
   chmod 644 /var/www/chef-validator.pem
@@ -26,6 +22,12 @@ fi
 if [[ ! -d /home/cumulus/.chef/trusted_certs ]]; then
   mkdir -p /home/cumulus/.chef/trusted_certs
 fi
+chmod 0755 /home/cumulus/.chef
+
+# Set up cumulus user.
+chef-server-ctl user-create cumulus Rocket Turtle cumulus@cumulusnetworks.com CumulusLinux! --filename /home/cumulus/.chef/cumulus.pem
+chef-server-ctl org-create cumulus "Cumulus Networks" --association_user cumulus --filename /etc/opscode/cumulus-validator.pem
+
 cp /var/opt/opscode/nginx/ca/wbench.lab.local.crt /home/cumulus/.chef/trusted_certs/
 
 
