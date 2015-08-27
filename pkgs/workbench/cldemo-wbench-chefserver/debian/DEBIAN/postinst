@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+  #!/usr/bin/env bash
 set -x
 
 chef-server-ctl reconfigure
@@ -10,6 +10,9 @@ fi
 chown cumulus:cumulus /home/cumulus/.chef
 
 chmod -R 0755 /home/cumulus/.chef
+
+# sleeping to wait for chef server to be ready
+sleep 2
 
 # Set up cumulus user.
 chef-server-ctl user-create cumulus Rocket Turtle cumulus@cumulusnetworks.com CumulusLinux! --filename /home/cumulus/.chef/cumulus.pem
@@ -26,6 +29,7 @@ if [[ ! -f /etc/chef/validation.pem ]]; then
   cp /etc/opscode/cumulus-validator.pem /etc/chef/validation.pem
 fi
 
+/usr/local/bin/knife configure --validation-key /etc/opscode/cumulus-validator.pem --admin-client-key /home/cumulus/.chef/cumulus.pem -u cumulus -s https://wbench.lab.local:443 --defaults -y -r /home/cumulus/example-ospfunnum-chef
 # On the wbench, Apache listens on 80, switch Chef to a different port
 # sed -i /var/opt/opscode/nginx/etc/nginx.conf -e 's!listen 80!listen 81!'
 # sleep 5
