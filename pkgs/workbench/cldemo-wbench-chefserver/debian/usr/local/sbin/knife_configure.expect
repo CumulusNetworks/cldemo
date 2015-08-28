@@ -2,6 +2,5 @@
 
 set timeout 20
 
-spawn knife configure -i --validation-key /etc/opscode/chef-validator.pem --admin-client-key /etc/opscode/admin.pem -u cumulus -s https://wbench.lab.local:443 --defaults -y -r /usr/local/share/chef
-
+spawn knife configure -i --validation-key /etc/opscode/chef-validator.pem --admin-client-key /etc/opscode/admin.pem -u cumulus -s https://wbench.lab.local:443 --defaults -y -r /home/cumulus/example-ospfunnum-chef
 expect "Please enter a password for the new user:" { send "CumulusLinux!\r"; interact }
