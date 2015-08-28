@@ -31,7 +31,9 @@ if [[ ! -f /etc/chef/validation.pem ]]; then
   cp /etc/opscode/cumulus-validator.pem /etc/chef/validation.pem
 fi
 
-/usr/local/bin/knife configure --validation-key /etc/opscode/cumulus-validator.pem --admin-client-key /home/cumulus/.chef/cumulus.pem -u cumulus -s https://wbench.lab.local:443 --defaults -y -r /home/cumulus/example-ospfunnum-chef
+# Set up cumulus user. Use wrapper script because knife prompts for a password
+/usr/local/sbin/knife_configure.expect
+
 # On the wbench, Apache listens on 80, switch Chef to a different port
 # sed -i /var/opt/opscode/nginx/etc/nginx.conf -e 's!listen 80!listen 81!'
 # sleep 5
