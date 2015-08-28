@@ -7,6 +7,7 @@ chef-server-ctl reconfigure
 if [[ ! -d /home/cumulus/.chef/trusted_certs ]]; then
   mkdir -p /home/cumulus/.chef/trusted_certs
 fi
+
 chown cumulus:cumulus /home/cumulus/.chef
 
 chmod -R 0755 /home/cumulus/.chef
