@@ -24,9 +24,9 @@ if [ ! -d $CONFDIR ]; then
     mkdir $CONFDIR/easy-rsa/
 fi
 
-#if [ ! -f $CONFDIR/$VPNNAME.key ]; then
-#    cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0/* $CONFDIR/easy-rsa/
-#fi
+if [ ! -f $CONFDIR/$VPNNAME.key ]; then
+    cp -r /usr/share/easy-rsa/* $CONFDIR/easy-rsa/
+fi
 
 # CA variables
 export EASY_RSA="/etc/openvpn/easy-rsa"
