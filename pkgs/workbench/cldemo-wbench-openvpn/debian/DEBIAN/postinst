@@ -19,8 +19,12 @@ WBENCHPASS=`jq '.[] | .workbench.password' /var/www/wbench.json`
 echo "AUTOSTART=\"all\"" >> /etc/default/openvpn
 
 # copy easy-rsa for server CA creation
-if [ ! -f $CONFDIR/$VPNNAME.key ]; then
+
+if [ ! -d $CONFDIR ]; then
     mkdir $CONFDIR/easy-rsa/
+fi
+
+if [ ! -f $CONFDIR/$VPNNAME.key ]; then
     cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0/* $CONFDIR/easy-rsa/
 fi
 
@@ -185,7 +189,7 @@ Visit https://workbench.cumulusnetworks.com/wbench$WBENCHID/openvpn/
 
 Username $WBENCHUSER password $WBENCHPASS
 
-Mac download $MACZIP and unzip for Tunnelblick 
+Mac download $MACZIP and unzip for Tunnelblick
 Windows download $WINZIP and unzip for OpenVPN client
 ********
 ********
