@@ -184,17 +184,17 @@ rm -f /etc/apache2/sites-enabled/000-default
 
 service apache2 restart
 
-echo "
-********
-********
-Visit https://workbench.cumulusnetworks.com/wbench$WBENCHID/openvpn/
-
-Username $WBENCHUSER password $WBENCHPASS
-
-Mac download $MACZIP and unzip for Tunnelblick
-Windows download $WINZIP and unzip for OpenVPN client
-********
-********
-
-"
+# echo "
+# ********
+# ********
+# Visit https://workbench.cumulusnetworks.com/wbench$WBENCHID/openvpn/
+#
+# Username $WBENCHUSER password $WBENCHPASS
+#
+# Mac download $MACZIP and unzip for Tunnelblick
+# Windows download $WINZIP and unzip for OpenVPN client
+# ********
+# ********
+#
+# "
 exit 0
