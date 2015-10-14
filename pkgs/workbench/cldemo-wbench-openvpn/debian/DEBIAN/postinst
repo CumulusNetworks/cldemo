@@ -20,13 +20,15 @@ echo "AUTOSTART=\"all\"" >> /etc/default/openvpn
 
 # copy easy-rsa for server CA creation
 
-if [ ! -d $CONFDIR ]; then
+if [ ! -d $CONFDIR/easy-rsa ]; then
     mkdir $CONFDIR/easy-rsa/
 fi
 
 if [ ! -f $CONFDIR/$VPNNAME.key ]; then
     cp -r /usr/share/easy-rsa/* $CONFDIR/easy-rsa/
 fi
+
+echo 1 > $CONFDIR/easy-rsa/keys/index.txt
 
 # CA variables
 export EASY_RSA="/etc/openvpn/easy-rsa"
