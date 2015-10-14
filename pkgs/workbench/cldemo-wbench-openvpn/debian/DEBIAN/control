@@ -1,9 +1,9 @@
 Package: cldemo-wbench-openvpn
-Version: 0.7
+Version: 0.7-1
 Section: base
 Priority: optional
 Architecture: all
-Depends: openvpn, cldemo-wbench-base
+Depends: openvpn, cldemo-wbench-base, easy-rsa
 Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
 Description: Pre-configured OpenVPN and TunnelBlick config
   Sets up preconfigured OpenVPN
