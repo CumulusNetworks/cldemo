@@ -14,6 +14,6 @@ OS install files have been added to /var/lib/tftpboot
 
 You can install Ubuntu 12.04 on a host using:
 
-$ cw-pxehelper -s server1 -o ubuntuserver-precise -n
+$ cwng-pxehelper -s server1 -o ubuntuserver-precise -n
 
 EOF
