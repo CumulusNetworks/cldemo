@@ -9,6 +9,6 @@ if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
     cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
 fi
 
-printf "********\nReload the switches using cw-swpower -a -o reset and wait about 5 minutes\n********\n"
+printf "********\nReload the switches using cwng-swpower -a -o reset and wait about 5 minutes\n********\n"
 printf "********\nThen please run librenms-setup.sh as root\n********\n"
 exit 0

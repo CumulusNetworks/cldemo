@@ -8,11 +8,11 @@ ln -fs /var/www/topology-clos-hosts-2lt22s.dot /var/www/topology.dot
 cp -f /var/www/topology.dot /home/cumulus/ansibledemos/roles/common/files
 
 # install Ubuntu on the servers
-cw-pxehelper -o ubuntuserver-trusty -s server1 -n
-cw-pxehelper -o ubuntuserver-trusty -s server2 -n
+cwng-pxehelper -o ubuntuserver-trusty -s server1 -n
+cwng-pxehelper -o ubuntuserver-trusty -s server2 -n
 
 # restart the switches, so they grab the SSH key
-cw-swpower -o reset -a
+cwng-swpower -o reset -a
 
 chown -R cumulus:cumulus /home/cumulus/
 

@@ -60,7 +60,7 @@ echo
 echo OS install files have been added to /var/lib/tftpboot
 echo You can install an OS on a host using:
 echo
-echo $ cw-pxehelper -s server1 -o esxi55 -n
+echo $ cwng-pxehelper -s server1 -o esxi55 -n
 echo
 echo *****************************************************
 

@@ -27,7 +27,7 @@ OS install files have been added to /var/lib/tftpboot
 
 You can install Ubuntu 14.04 w/Puppet on a host using:
 
-$ cw-pxehelper -s server1 -o ubuntuserver-trusty-puppet -n
+$ cwng-pxehelper -s server1 -o ubuntuserver-trusty-puppet -n
 
 EOF
 
