@@ -1,9 +1,0 @@
-Package: cldemo-wbench-librenms-base
-Version: 0.1-5
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-base
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: Base files for LibreNMS installation
-  Base files for LibreNMS installation, includes submodule of librenms

@@ -1,8 +1,0 @@
-#!/bin/bash
-# copy topology.dot for ptmd to proper directory
-if [ ! -f /etc/puppet/modules/base/files/topology.dot ]; then
-      cp /var/www/topology.dot /etc/puppet/modules/base/files/topology.dot
-fi
-
-/usr/bin/puppet agent --test
-exit 0

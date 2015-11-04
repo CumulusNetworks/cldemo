@@ -1,4 +1,0 @@
-header_tmpl: |+
-  #Configured By Ansible
-
-cl_license_server: 192.168.0.1

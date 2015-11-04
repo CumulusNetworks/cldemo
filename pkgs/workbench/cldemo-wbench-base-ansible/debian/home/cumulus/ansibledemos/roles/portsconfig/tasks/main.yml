@@ -1,6 +1,0 @@
-- name: configure T2 leaf ports
-  template: src=ports_conf_2lt22s.j2 dest=/etc/cumulus/ports.conf
-  notify:
-    - restart switchd
-    - reload networking
-    - restart quagga

@@ -1,6 +1,0 @@
----
-- name: enable and start hdfs datanode
-  service: name=hadoop-datanode state=started enabled=yes
-
-- name: enable and start yarn nodemanager
-  service: name=yarn-nodemanager state=started enabled=yes

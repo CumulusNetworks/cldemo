@@ -1,9 +1,0 @@
-Package: cldemo-wbench-ospfunnum-base-ansible
-Version: 0.2-3
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-base-ansible
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: Ansible, PTM and OSPF Unnumbered IPv4
-  Ansible, OSPF Unnumbered IPv4 and PTM

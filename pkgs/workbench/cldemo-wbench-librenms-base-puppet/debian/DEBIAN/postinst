@@ -1,9 +1,0 @@
-#!/bin/sh
-set -e
-
-if [ ! -f /var/www/librenms/html/provision.sh ]; then
-    ln -s /var/www/provision-puppet.sh /var/www/librenms/html/provision.sh
-fi
-sed -i /etc/dhcp/dhcpd.pools -e 's/# option cumulus-provision-url/option cumulus-provision-url/'
-service isc-dhcp-server restart
-exit 0
