@@ -1,6 +1,0 @@
-include_recipe "cldemo_base::chef-client"
-include_recipe "cldemo_base::license"
-include_recipe "cldemo_base::interfaces"
-include_recipe "cldemo_base::ptm"
-include_recipe "cldemo_base::motd"
-include_recipe "cldemo_base::ntp"
