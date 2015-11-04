@@ -1,9 +1,0 @@
-Package: cldemo-wbench-hortonworks-2lt22s-ansible
-Version: 0.2-2
-Section: base
-Priority: optional
-Architecture: all
-Depends: cldemo-wbench-base-ansible, cldemo-wbench-osinstaller-ubuntuserver-trusty, cldemo-wbench-ospfunnum-base-ansible
-Maintainer: Customer Engineering <ce-ceng@cumulusnetworks.com>
-Description: Trident2 2 leaf 2 spine; Hosts running Hortonworks HDP
-  4 switch lab with Hortonworks managed by Ansible

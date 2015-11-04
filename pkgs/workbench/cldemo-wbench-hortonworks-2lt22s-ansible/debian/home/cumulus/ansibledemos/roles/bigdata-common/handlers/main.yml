@@ -1,2 +1,0 @@
-- name: restart server networking
-  shell: /sbin/ifdown --exclude=lo -a && /sbin/ifup --exclude=lo -a

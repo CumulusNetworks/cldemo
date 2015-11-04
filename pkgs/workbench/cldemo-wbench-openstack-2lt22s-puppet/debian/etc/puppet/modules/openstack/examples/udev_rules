@@ -1,4 +1,0 @@
-SUBSYSTEM=="net", ATTR{address}=="c8:1f:66:b8:c4:7b", NAME="eth1", DRIVERS=="?*"
-SUBSYSTEM=="net", ATTR{address}=="c8:1f:66:b8:c4:7a", NAME="eth0", DRIVERS=="?*"
-SUBSYSTEM=="net", KERNELS=="0000:0a:00.0", NAME="eth2", DRIVERS=="?*"
-SUBSYSTEM=="net", KERNELS=="0000:0a:00.1", NAME="eth3", DRIVERS=="?*"
