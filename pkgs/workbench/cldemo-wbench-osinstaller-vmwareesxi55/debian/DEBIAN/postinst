@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-ISOURL=http://mirror.cwb.cumulusnetworks.com/vmware/VMware-VMvisor-Installer-5.5.0.update01-1623387.x86_64.iso
+ISOURL=http://mirror.cwb.cumulusnetworks.com/vmware/VMware-esxi.tar
 ISOMD5SUM=36dfcb269a20d7bfe7323f825128e1a8
-ISOTMP=/tmp/vmware-esxi.iso
+ISOTMP=/tmp/vmware-esxi.tar
 ISOMNT=/mnt/esxicd
 PXEDIR=/var/lib/tftpboot/pxe
 ESXDIR=esxi55
@@ -33,10 +33,11 @@ mkdir -p $PXEDIR/$ESXDIR
 
 # extract iso
 echo "Extracting ESXi CD"
-mkdir -p $ISOMNT
-mount -o loop,ro $ISOTMP $ISOMNT
-rsync -a $ISOMNT/ $PXEDIR/$ESXDIR/
-umount $ISOMNT
+#mkdir -p $ISOMNT
+#mount -o loop,ro $ISOTMP $ISOMNT
+#rsync -a $ISOMNT/ $PXEDIR/$ESXDIR/
+#umount $ISOMNT
+tar xvf $ISOTMP -C $PXEDIR/$ESXDIR
 echo "Extract complete"
 
 # edit ESXi boot.cfg
