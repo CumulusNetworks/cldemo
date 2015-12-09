@@ -14,7 +14,7 @@ WINZIP="$VPNNAME-win.zip"
 WBENCHID=`jq '.[] | .workbench.wbench_id' /var/www/wbench.json`
 WBENCHUSER=`jq '.[] | .workbench.username' /var/www/wbench.json`
 WBENCHPASS=`jq '.[] | .workbench.password' /var/www/wbench.json`
-WBENCHNUM="$WBENCHUSER: -4"
+WBENCHNUM="${WBENCHUSER: -5:4}"
 WBENCHPORT="2$WBENCHNUM"
 WBENCHWEB="3$WBENCHNUM"
 
