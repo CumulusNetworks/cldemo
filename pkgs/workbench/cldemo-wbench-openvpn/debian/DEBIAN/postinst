@@ -18,6 +18,7 @@ WBENCHNUM="${WBENCHUSER: -5:4}"
 WBENCHPORT="2$WBENCHNUM"
 WBENCHWEB="3$WBENCHNUM"
 
+sed -i 's/KEY_ALTNAMES="$KEY_CN"/KEY_ALTNAMES="DNS:$KEY_CN"/' /etc/openvpn/easy-rsa/pkitool
 
 echo "AUTOSTART=\"all\"" >> /etc/default/openvpn
 
