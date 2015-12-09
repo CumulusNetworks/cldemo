@@ -112,8 +112,8 @@ port 9999
 proto tcp-server
 comp-lzo
 ca $CONFDIR/easy-rsa/keys/ca.crt
-cert $CONFDIR/easy-rsa/keys/workbench.crt
-key $CONFDIR/easy-rsa/keys/workbench.key
+cert $CONFDIR/easy-rsa/keys/wbench1.crt
+key $CONFDIR/easy-rsa/keys/wbench1.key
 dh $CONFDIR/easy-rsa/keys/dh1024.pem
 server 172.16.24.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
