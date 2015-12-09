@@ -174,14 +174,14 @@ sed -i 's/AddIcon/# AddIcon/' /etc/apache2/mods-available/autoindex.conf
 sed -i 's/DefaultIcon/# DefaultIcon/'  /etc/apache2/mods-available/autoindex.conf
 
 # remove default page
-rm -f /etc/apache2/sites-enabled/000-default
+rm -f /etc/apache2/sites-enabled/000-default.conf
 
 service apache2 restart
 
 echo "
 ********
 ********
-Visit http://jump.wb.cumulusnetworks.com:
+Visit http://jump.wb.cumulusnetworks.com:3${WBENCHUSER: -4}/openvpn
 
 Username $WBENCHUSER password $WBENCHPASS
 
