@@ -12,9 +12,11 @@ WWWDIR="/var/www/openvpn"
 MACZIP="$VPNNAME.tblk.zip"
 WINZIP="$VPNNAME-win.zip"
 WBENCHID=`jq '.[] | .workbench.wbench_id' /var/www/wbench.json`
-WBENCHPORT=`jq '.[] | .workbench.external_tcp_port' /var/www/wbench.json`
 WBENCHUSER=`jq '.[] | .workbench.username' /var/www/wbench.json`
 WBENCHPASS=`jq '.[] | .workbench.password' /var/www/wbench.json`
+WBENCHPORT="2$WBENCHNUM"
+WBENCHWEB="3$WBENCHNUM"
+
 
 echo "AUTOSTART=\"all\"" >> /etc/default/openvpn
 
@@ -181,7 +183,7 @@ service apache2 restart
 echo "
 ********
 ********
-Visit http://jump.wb.cumulusnetworks.com:3${WBENCHUSER: -4}/openvpn
+Visit http://jump.wb.cumulusnetworks.com:$WBENCHWEB/openvpn
 
 Username $WBENCHUSER password $WBENCHPASS
 
