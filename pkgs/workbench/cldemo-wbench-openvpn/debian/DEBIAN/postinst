@@ -128,7 +128,7 @@ client
 tls-client
 proto tcp-client
 comp-lzo
-remote 162.248.201.206 $WBENCHPORT
+remote jump.wb.cumulusnetworks.com $WBENCHPORT
 ca ca.crt
 cert wbench1.crt
 key wbench1.key
@@ -181,7 +181,7 @@ service apache2 restart
 echo "
 ********
 ********
-Visit https://workbench.cumulusnetworks.com/wbench$WBENCHID/openvpn/
+Visit http://jump.wb.cumulusnetworks.com:
 
 Username $WBENCHUSER password $WBENCHPASS
 
