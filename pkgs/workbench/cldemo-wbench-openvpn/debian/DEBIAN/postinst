@@ -137,6 +137,7 @@ ca ca.crt
 cert wbench1.crt
 key wbench1.key
 keepalive 10 120
+ns-cert-type server
 " > $TBLKDIR/client.conf
 
 if [ ! -d /var/www/openvpn/ ]; then
