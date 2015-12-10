@@ -41,7 +41,6 @@ export KEY_DIR=\"$EASY_RSA/keys\"
 export KEY_SIZE=1024
 export CA_EXPIRE=3650
 export KEY_EXPIRE=3650
-export KEY_ALTNAMES=\"wbench\"
 export KEY_COUNTRY=\"US\"
 export KEY_PROVINCE=\"CA\"
 export KEY_CITY=\"MountainView\"
@@ -88,7 +87,6 @@ export CA_EXPIRE=3650
 export KEY_EXPIRE=3650
 export KEY_COUNTRY=\"US\"
 export KEY_PROVINCE=\"CA\"
-export KEY_ALTNAMES=\"wbench\"
 export KEY_CITY=\"MountainView\"
 export KEY_ORG=\"Cumulus-Networks\"
 export KEY_EMAIL=\"mail@cumulusnetworks.com\"
@@ -116,8 +114,8 @@ port 9999
 proto tcp-server
 comp-lzo
 ca $CONFDIR/easy-rsa/keys/ca.crt
-cert $CONFDIR/easy-rsa/keys/wbench1.crt
-key $CONFDIR/easy-rsa/keys/wbench1.key
+cert $CONFDIR/easy-rsa/keys/workbench.crt
+key $CONFDIR/easy-rsa/keys/workbench.key
 dh $CONFDIR/easy-rsa/keys/dh1024.pem
 server 172.16.24.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
