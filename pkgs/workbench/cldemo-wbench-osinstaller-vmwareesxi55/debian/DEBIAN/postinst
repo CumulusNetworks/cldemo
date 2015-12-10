@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ISOURL=http://mirror.cwb.cumulusnetworks.com/vmware/VMware-esxi.tar
-ISOMD5SUM=24eb965e4405ba1e9dad953b9042525a
+ISOMD5SUM=9424baf47c8d4e4f366f9f9173e3c9b1
 ISOTMP=/tmp/vmware-esxi.tar
 ISOMNT=/mnt/esxicd
 PXEDIR=/var/lib/tftpboot/pxe
