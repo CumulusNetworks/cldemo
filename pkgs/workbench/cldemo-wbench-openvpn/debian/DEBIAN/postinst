@@ -178,6 +178,7 @@ service openvpn start
 # hide autoindex icons as they try to move up the directory chain
 sed -i 's/AddIcon/# AddIcon/' /etc/apache2/mods-available/autoindex.conf
 sed -i 's/DefaultIcon/# DefaultIcon/'  /etc/apache2/mods-available/autoindex.conf
+chmod 0666 $TBLKDIR/*
 
 # remove default page
 rm -f /etc/apache2/sites-enabled/000-default.conf
